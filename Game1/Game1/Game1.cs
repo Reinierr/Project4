@@ -1,8 +1,6 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using Android.Util;
-using Android.Content;
 
 namespace Game1
 {
@@ -13,22 +11,16 @@ namespace Game1
   {
     GraphicsDeviceManager graphics;
     SpriteBatch spriteBatch;
-		Drawable background;
 
-
-
-		
-		
-		public Game1()
+    public Game1()
     {
       graphics = new GraphicsDeviceManager(this);
       Content.RootDirectory = "Content";
-			string tag = "myapp";
+
       graphics.IsFullScreen = true;
-			graphics.PreferredBackBufferWidth = 480;
-      graphics.PreferredBackBufferHeight = 800;
-			graphics.SupportedOrientations = DisplayOrientation.Portrait;
-			
+      graphics.PreferredBackBufferWidth = 800;
+      graphics.PreferredBackBufferHeight = 480;
+            graphics.SupportedOrientations = DisplayOrientation.Portrait| DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
     }
 
     /// <summary>
@@ -39,8 +31,9 @@ namespace Game1
     /// </summary>
     protected override void Initialize()
     {
-			// TODO: Add your initialization logic here
-			base.Initialize();
+      // TODO: Add your initialization logic here
+
+      base.Initialize();
     }
 
     /// <summary>
@@ -51,9 +44,9 @@ namespace Game1
     {
       // Create a new SpriteBatch, which can be used to draw textures.
       spriteBatch = new SpriteBatch(GraphicsDevice);
-			background = Statics.getCheckers(graphics);
-			// TODO: use this.Content to load your game content here
-		}
+
+      // TODO: use this.Content to load your game content here
+    }
 
     /// <summary>
     /// UnloadContent will be called once per game and is the place to unload
@@ -64,11 +57,17 @@ namespace Game1
       // TODO: Unload any non ContentManager content here
     }
 
+    /// <summary>
+    /// Allows the game to run logic such as updating the world,
+    /// checking for collisions, gathering input, and playing audio.
+    /// </summary>
+    /// <param name="gameTime">Provides a snapshot of timing values.</param>
     protected override void Update(GameTime gameTime)
     {
       if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
         Exit();
 
+      // TODO: Add your update logic here
 
       base.Update(gameTime);
     }
@@ -79,11 +78,9 @@ namespace Game1
     /// <param name="gameTime">Provides a snapshot of timing values.</param>
     protected override void Draw(GameTime gameTime)
     {
-			
       GraphicsDevice.Clear(Color.CornflowerBlue);
-			spriteBatch.Begin();
-			background.Draw(spriteBatch);
-			spriteBatch.End();
+
+      // TODO: Add your drawing code here
 
       base.Draw(gameTime);
     }
