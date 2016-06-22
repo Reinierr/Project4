@@ -13,4 +13,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/screen2" />
+    <Button
+        android:text="@string/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pieChart" />
+    <Button
+        android:text="@string/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineChart" />
 </LinearLayout>

@@ -34,7 +34,19 @@ namespace App1.Droid
                  var intent = new Intent(this, typeof(screen2));
                  StartActivity(intent);
              };
-		}
+            Button piescreen = FindViewById<Button>(Resource.Id.pieChart);
+            piescreen.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(pieChart));
+                StartActivity(intent);
+            };
+            Button linescreen = FindViewById<Button>(Resource.Id.lineChart);
+            linescreen.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(lineChart));
+                StartActivity(intent);
+            };
+        }
 	}
 }
 
