@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace App1.Droid
 {
-	[Activity (Label = "Main Screen", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "Bike Crime 'n Storage", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		int count = 1;
