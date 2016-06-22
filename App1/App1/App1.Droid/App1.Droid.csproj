@@ -50,9 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Resources\lineChart.cs" />
-    <Compile Include="Resources\pieChart.cs" />
-    <Compile Include="Resources\screen2.cs" />
+    <Compile Include="lineChart.cs" />
+    <Compile Include="pieChart.cs" />
+    <Compile Include="screen2.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

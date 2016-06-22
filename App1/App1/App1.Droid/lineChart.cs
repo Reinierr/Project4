@@ -11,14 +11,15 @@ using Android.Views;
 using Android.Widget;
 
 namespace App1.Droid
-{
-    [Activity(Label = "@string/screen2")]
-    public class screen2 : Activity
+{ 
+    [Activity(Label = "lineChart")]
+    public class lineChart : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.screen2);
+            //  opens de layout
+            SetContentView(Resource.Layout.lineChart);
             // Create your application here
         }
     }

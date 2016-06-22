@@ -28,6 +28,7 @@ namespace App1.Droid
 			button.Click += delegate {
 				button.Text = string.Format ("{0} clicks!", count++);
 			};
+            // buttons for the charts (visitor  and list)
             Button barscreen = FindViewById<Button>(Resource.Id.screen2);
             barscreen.Click += (sender, e) =>
              {
