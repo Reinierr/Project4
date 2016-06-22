@@ -20,7 +20,7 @@ namespace Game1
       graphics.IsFullScreen = true;
       graphics.PreferredBackBufferWidth = 800;
       graphics.PreferredBackBufferHeight = 480;
-      graphics.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
+            graphics.SupportedOrientations = DisplayOrientation.Portrait| DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
     }
 
     /// <summary>
