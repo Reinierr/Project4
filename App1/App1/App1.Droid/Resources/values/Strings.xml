@@ -2,4 +2,7 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">App1.Droid</string>
+  <string name="screen2">Bar Chart 1</string>
+  <string name="pieChart">Pie Chart</string>
+  <string name="lineChart">Line Chart</string>
 </resources>

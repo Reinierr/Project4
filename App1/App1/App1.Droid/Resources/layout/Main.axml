@@ -1,16 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/linearLayout1"
-    android:minWidth="25px"
-    android:minHeight="25px">
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
     <Button
-        android:text="Button"
+        android:id="@+id/myButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/button1"
-        android:layout_marginTop="0.0dp"
-				android:paddingTop="400dp"/>
+        android:text="@string/hello" />
+    <Button
+        android:text="@string/screen2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/screen2" />
+    <Button
+        android:text="@string/pieChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/pieChart" />
+    <Button
+        android:text="@string/lineChart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lineChart" />
 </LinearLayout>

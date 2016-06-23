@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace App1.Droid
 {
-	[Activity (Label = "App1.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "Bike Crime 'n Storage", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		int count = 1;
@@ -34,7 +34,26 @@ namespace App1.Droid
 					progressBar.Progress += 2;
 				}
 			};
-		}
+            // buttons for the charts (visitor  and list)
+            Button barscreen = FindViewById<Button>(Resource.Id.screen2);
+            barscreen.Click += (sender, e) =>
+             {
+                 var intent = new Intent(this, typeof(screen2));
+                 StartActivity(intent);
+             };
+            Button piescreen = FindViewById<Button>(Resource.Id.pieChart);
+            piescreen.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(pieChart));
+                StartActivity(intent);
+            };
+            Button linescreen = FindViewById<Button>(Resource.Id.lineChart);
+            linescreen.Click += (sender, e) =>
+            {
+                var intent = new Intent(this, typeof(lineChart));
+                StartActivity(intent);
+            };
+        }
 	}
 }
 
