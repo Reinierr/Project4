@@ -1,5 +1,5 @@
 ﻿using System;
-
+using App1;
 using Android.App;
 using Android.Content;
 using Android.Runtime;
@@ -24,9 +24,15 @@ namespace App1.Droid
 			// Get our button from the layout resource,
 			// and attach an event to it
 			Button button = FindViewById<Button> (Resource.Id.myButton);
+			ProgressBar progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar1);
 			
+			progressBar.Max = 100;
+			progressBar.Progress = 1;
 			button.Click += delegate {
 				button.Text = string.Format ("{0} clicks!", count++);
+				if (progressBar.Progress <= progressBar.Max) {
+					progressBar.Progress += 2;
+				}
 			};
 		}
 	}
