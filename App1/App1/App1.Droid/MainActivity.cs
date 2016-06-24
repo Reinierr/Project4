@@ -23,30 +23,31 @@ namespace App1.Droid
 
 			// Get our button from the layout resource,
 			// and attach an event to it
-			Button button = FindViewById<Button> (Resource.Id.myButton);
+			ImageButton button = FindViewById<ImageButton> (Resource.Id.myButton);
 			
 			button.Click += delegate {
-				button.Text = string.Format ("{0} clicks!", count++);
+			//	button.Text = string.Format ("{0} clicks!", count++);
 			};
             // buttons for the charts (visitor  and list)
-            Button barscreen = FindViewById<Button>(Resource.Id.screen2);
+            ImageButton barscreen = FindViewById<ImageButton>(Resource.Id.screen2);
             barscreen.Click += (sender, e) =>
              {
                  var intent = new Intent(this, typeof(screen2));
                  StartActivity(intent);
              };
-            Button piescreen = FindViewById<Button>(Resource.Id.pieChart);
+            ImageButton piescreen = FindViewById<ImageButton>(Resource.Id.pieChart);
             piescreen.Click += (sender, e) =>
             {
                 var intent = new Intent(this, typeof(pieChart));
                 StartActivity(intent);
             };
-            Button linescreen = FindViewById<Button>(Resource.Id.lineChart);
+            ImageButton linescreen = FindViewById<ImageButton>(Resource.Id.lineChart);
             linescreen.Click += (sender, e) =>
             {
                 var intent = new Intent(this, typeof(lineChart));
                 StartActivity(intent);
             };
+            
         }
 	}
 }

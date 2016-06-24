@@ -45,7 +45,19 @@ namespace App1.Droid
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int Icon = 2130837504;
+			public const int barchart3 = 2130837504;
+			
+			// aapt resource value: 0x7f020001
+			public const int Icon = 2130837505;
+			
+			// aapt resource value: 0x7f020002
+			public const int linechart3 = 2130837506;
+			
+			// aapt resource value: 0x7f020003
+			public const int piechart3 = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int savebike3 = 2130837508;
 			
 			static Drawable()
 			{
@@ -60,14 +72,17 @@ namespace App1.Droid
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050003
-			public const int lineChart = 2131034115;
-			
 			// aapt resource value: 0x7f050000
-			public const int myButton = 2131034112;
+			public const int layoutContainer = 2131034112;
 			
 			// aapt resource value: 0x7f050002
-			public const int pieChart = 2131034114;
+			public const int lineChart = 2131034114;
+			
+			// aapt resource value: 0x7f050003
+			public const int myButton = 2131034115;
+			
+			// aapt resource value: 0x7f050004
+			public const int pieChart = 2131034116;
 			
 			// aapt resource value: 0x7f050001
 			public const int screen2 = 2131034113;
