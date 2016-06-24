@@ -12,8 +12,8 @@ using Android.Widget;
 
 namespace App1.Droid
 {
-    [Activity(Label = "piechart")]
-    public class piechart : Activity
+    [Activity(Label = "barchart")]
+    public class barchart : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

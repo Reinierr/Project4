@@ -11,15 +11,14 @@ using Android.Views;
 using Android.Widget;
 
 namespace App1.Droid
-{ 
-    [Activity(Label = "lineChart")]
-    public class lineChart : Activity
+{
+    [Activity(Label = "linechart")]
+    public class linechart : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            //  opens de layout
-            SetContentView(Resource.Layout.lineChart);
+
             // Create your application here
         }
     }

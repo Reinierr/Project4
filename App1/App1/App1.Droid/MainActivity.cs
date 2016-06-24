@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace App1.Droid
 {
-	[Activity (Label = "Bike Crime 'n Storage", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "App1.Droid", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		int count = 1;
@@ -18,36 +18,35 @@ namespace App1.Droid
 		{
 			base.OnCreate (bundle);
 
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
+            // Set our view from the "main" layout resource
+            SetContentView(Resource.Layout.Main);
 
-			// Get our button from the layout resource,
-			// and attach an event to it
-			ImageButton button = FindViewById<ImageButton> (Resource.Id.myButton);
-			
-			button.Click += delegate {
-			//	button.Text = string.Format ("{0} clicks!", count++);
-			};
+            // Get our button from the layout resource,
+            // and attach an event to it
+            ImageButton button = FindViewById<ImageButton>(Resource.Id.myButton);
+
+            button.Click += delegate {
+                //	button.Text = string.Format ("{0} clicks!", count++);
+            };
             // buttons for the charts (visitor  and list)
-            ImageButton barscreen = FindViewById<ImageButton>(Resource.Id.screen2);
+            ImageButton barscreen = FindViewById<ImageButton>(Resource.Id.barchart);
             barscreen.Click += (sender, e) =>
-             {
-                 var intent = new Intent(this, typeof(screen2));
-                 StartActivity(intent);
-             };
+            {
+                var intent = new Intent(this, typeof(barchart));
+                StartActivity(intent);
+            };
             ImageButton piescreen = FindViewById<ImageButton>(Resource.Id.pieChart);
             piescreen.Click += (sender, e) =>
             {
-                var intent = new Intent(this, typeof(pieChart));
-                StartActivity(intent);
+                var intent = new Intent(this, typeof(piechart));
+               StartActivity(intent);
             };
             ImageButton linescreen = FindViewById<ImageButton>(Resource.Id.lineChart);
             linescreen.Click += (sender, e) =>
             {
-                var intent = new Intent(this, typeof(lineChart));
+                var intent = new Intent(this, typeof(linechart));
                 StartActivity(intent);
             };
-            
         }
 	}
 }
