@@ -17,20 +17,18 @@ namespace App1
       this.connection = sr;
       this.type = type;
       var csv = new CsvReader(this.connection);
-      csv.Configuration.IgnoreHeaderWhiteSpace = true;
       csv.Configuration.Delimiter = ";";
       if (type == "fietsdiefstal")
       {
         var records = csv.GetRecords<FietsDiefstal>().ToList();
         this.fietsdiefstallen = records;
       }
-      /*
+
       else if (type == "fietstrommel")
       {
         var records = csv.GetRecords<FietsTrommel>().ToList();
         this.fietstrommels = records;
       }
-      */
     }
 
     public Dictionary<int, int> getLinechart()
@@ -46,6 +44,37 @@ namespace App1
       {
         result[line.Month] = line.Count; 
       }
+      return result;
+    }
+
+    public Dictionary<string, int> getPiechartBrand()
+    {
+      Dictionary<string, int> result = new Dictionary<string, int>();
+      foreach (var line in fietsdiefstallen
+        .GroupBy(fiets => new { fiets.merk })
+        .Select(group => new
+        {
+          Brand = group.Key.merk,
+          Count = group.Count()
+        })
+        .OrderByDescending(x => x.Count)
+        .Take(5))
+      {
+        result[line.Brand] = line.Count;
+      }
+      return result;
+    }
+
+    public Dictionary<string, int> getPiechartColor()
+    {
+      Dictionary<string, int> result = new Dictionary<string, int>();
+      foreach (var line in fietsdiefstallen
+        .GroupBy(fiets => new { fiets.kleur })
+        .Select(group => new
+        {
+          Color = group.Key,
+          Count = group.Count()
+        })) ;
       return result;
     }
   }
