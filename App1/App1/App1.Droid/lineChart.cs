@@ -26,7 +26,6 @@ namespace App1.Droid
             PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
             view.Model = CreatePlotModel();
         }
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2140:TransparentMethodsMustNotReferenceCriticalCodeFxCopRule")]
         protected PlotModel CreatePlotModel()
         {
@@ -51,6 +50,14 @@ namespace App1.Droid
                 MarkerSize = 4,
                 MarkerStroke = OxyColors.White
             };
+
+            Dictionary<int, int> fd = preLoad.csvFD.getLinechart();
+            foreach(KeyValuePair<int, int> item in fd)
+            {
+              // item.Value, item.Key
+              System.Diagnostics.Debug.WriteLine(item.Value+" "+item.Key);
+            }
+
             Random y = new Random();
             for (Double i = 0; i < 13; i++)
             {
@@ -65,6 +72,7 @@ namespace App1.Droid
 
 
             };
+
             Random h = new Random();
             for (Double i = 0; i < 13; i++)
             {
