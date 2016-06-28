@@ -16,7 +16,7 @@ using OxyPlot.Series;
 
 namespace App1.Droid
 {
-    [Activity(Label = "barchart")]
+    [Activity(Label = "barchart", Icon = "@drawable/icon")]
     public class barchart : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

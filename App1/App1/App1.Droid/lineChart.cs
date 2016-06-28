@@ -16,7 +16,7 @@ using OxyPlot.Series;
 
 namespace App1.Droid
 {
-    [Activity(Label = "linechart")]
+    [Activity(Label = "linechart", Icon = "@drawable/icon")]
     public class linechart : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -34,15 +34,17 @@ namespace App1.Droid
             {
                 Title = title,
                 TitleFontSize = 24,
-                LegendPlacement = LegendPlacement.Outside,
-                LegendPosition = LegendPosition.BottomCenter,
+                LegendFontSize = 24,
+                LegendPlacement = LegendPlacement.Inside,
+                LegendPosition = LegendPosition.RightTop,
                 LegendOrientation = LegendOrientation.Horizontal,
                 LegendBorderThickness = 0
 
             };
-           // plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Bottom, Title = "Maanden", TitleFontSize = 20, }); //TitleColor = OxyColors.White, AxislineColor = OxyColors.White});
-            plotModel.Axes.Add(new LinearAxis { Position = AxisPosition.Left, Maximum = 10, Minimum = 0, Title = "Diefstal", TitleFontSize = 20 });// TitleColor = OxyColors.White, TitleFontSize = 20});
+            
+            var linearAxis = new LinearAxis { Position = AxisPosition.Left, Title = "Diefstal totaal", TitleFontSize = 20 };
             var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom, FontSize = 24 };
+            
             categoryAxis.Labels.Add("Jan");
             categoryAxis.Labels.Add("Feb");
             categoryAxis.Labels.Add("Mrt");
@@ -55,48 +57,25 @@ namespace App1.Droid
             categoryAxis.Labels.Add("Okt");
             categoryAxis.Labels.Add("Nov");
             categoryAxis.Labels.Add("Dec");
-
+            
 
             var series1 = new LineSeries
             {
                 MarkerType = MarkerType.Circle,
                 MarkerSize = 4,
-                MarkerStroke = OxyColors.White
+                MarkerStroke = OxyColors.White,
+                Title= "totaal"
             };
 
             Dictionary<int, int> fd = preLoad.csvFD.getLinechart();
             foreach(KeyValuePair<int, int> item in fd)
             {
-              // item.Value, item.Key
-              System.Diagnostics.Debug.WriteLine(item.Value+" "+item.Key);
-            }
-
-            Random y = new Random();
-            for (Double i = 0; i < 13; i++)
-            {
-                Double z = y.Next(0, 11);
-                series1.Points.Add(new DataPoint(i, z));
-            }
-            var series2 = new LineSeries
-            {
-                MarkerType = MarkerType.Circle,
-                MarkerSize = 4,
-                MarkerStroke = OxyColors.Yellow,
-
-
-            };
-
-            Random h = new Random();
-            for (Double i = 0; i < 13; i++)
-            {
-
-                Double z = h.Next(0, 11);
-                series2.Points.Add(new DataPoint(i, z));
+                series1.Points.Add(new DataPoint(item.Key-1.5, item.Value));
             }
 
             plotModel.Series.Add(series1);
-            plotModel.Series.Add(series2);
             plotModel.Axes.Add(categoryAxis);
+            plotModel.Axes.Add(linearAxis);
 
             return plotModel;
         }

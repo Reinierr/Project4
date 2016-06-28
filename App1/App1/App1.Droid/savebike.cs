@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace App1.Droid
 {
-    [Activity(Label = "savebike")]
+    [Activity(Label = "savebike", Icon = "@drawable/icon")]
     public class savebike : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

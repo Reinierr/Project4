@@ -16,7 +16,7 @@ using OxyPlot.Series;
 
 namespace App1.Droid
 {
-    [Activity(Label = "piechart")]
+    [Activity(Label = "piechart" , Icon = "@drawable/icon")]
     public class piechart : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
