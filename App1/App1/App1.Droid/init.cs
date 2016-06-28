@@ -28,7 +28,6 @@ namespace App1.Droid
       base.OnCreate();
       csvFD = new CSVConnection("fietsdiefstal", new StreamReader(Assets.Open("fietsdiefstal.csv")));
       csvFT = new CSVConnection("fietstrommel", new StreamReader(Assets.Open("fietstrommels.csv")));
-      csvFD.getLinechart();
     }
   }
 }
