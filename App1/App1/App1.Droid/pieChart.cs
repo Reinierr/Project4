@@ -28,9 +28,9 @@ namespace App1.Droid
         }
         public PlotModel CreatePlotModel()
         {
-            var modelP1 = new PlotModel { Title = "Most stolen bike brands" };
+            var modelP1 = new PlotModel { Title = "Most stolen bike brands", TitleColor = OxyColors.White };
 
-            var seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0 };
+            var seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0, InsideLabelFormat = "{1}: {2:0} %", OutsideLabelFormat = ""};
 
             Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartBrand();
             foreach(KeyValuePair<string, int> item in fdBrand)

@@ -5,9 +5,12 @@
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px"
-    android:background="#fff">
-  <OxyPlot.Xamarin.Android.PlotView
-      android:id="@+id/plot_view"
-      android:layout_width="match_parent"
-      android:layout_height="match_parent" />
+    android:background="#000">
+    <OxyPlot.Xamarin.Android.PlotView
+        android:id="@+id/plot_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" 
+				
+				/>
+				
 </LinearLayout>
