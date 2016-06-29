@@ -17,6 +17,7 @@ namespace App1
       this.connection = sr;
       this.type = type;
       var csv = new CsvReader(this.connection);
+      csv.Configuration.IgnoreHeaderWhiteSpace = true;
       csv.Configuration.Delimiter = ";";
       if (type == "fietsdiefstal")
       {
@@ -30,72 +31,76 @@ namespace App1
         this.fietstrommels = records;
       }
     }
-        /// <summary>
-        /// Chart filler data
-        /// </summary>
-        /// <returns></returns>
+    /// <summary>
+    /// Chart filler data
+    /// </summary>
+    /// <returns></returns>
     public Dictionary<int, int> getLinechart()
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
       foreach (var line in fietsdiefstallen
         .GroupBy(fiets => new { fiets.Begindatum.Month })
-        .Select(group => new {
+        .Select(group => new
+        {
           Month = group.Key.Month,
           Count = group.Count()
         })
         .OrderBy(x => x.Month))
       {
-        result[line.Month] = line.Count; 
+        result[line.Month] = line.Count;
       }
       return result;
     }
-    public Dictionary<string, int> getBarchart()
-        {
-            Dictionary<string, int> result = new Dictionary<string, int>();
-            foreach (var line in fietstrommels
-                .GroupBy(Trommel => new { Trommel.Deelgem})
-                .Select(group => new {
-                    Count = group.Count(),
-                    Neighborhood = group.Key.Deelgem
-                })
-                .OrderByDescending(x =>x.Count)
-                .Take(5)
-                )
-            {
-                result[line.Neighborhood] = line.Count;
-            }
-            return result;
-        }
-        public Dictionary<int, int> getBarchartGroup(string buurt)
-        {
-            Dictionary<int, int> result = new Dictionary<int, int>();
-            foreach (var line in fietsdiefstallen
-                .Where(diefstal => diefstal.Buurt == buurt)
-                .GroupBy(fiets => new { fiets.Begindatum.Month })
-                .Select(group => new {
-                Month = group.Key.Month,
-                Count = group.Count()
-              })
-                .OrderBy(x => x.Month))
-            {
-                result[line.Month] = line.Count;
-            }
-            foreach (var line in fietstrommels
-                .Where(diefstal => diefstal.Deelgem == buurt)
-                .GroupBy(fiets => new { fiets.Mutdatum.Month })
-                .Select(group => new {
-                    Month = group.Key.Month,
-                    Count = group.Count()
-                })
-                .OrderBy(x => x.Month))
-            {
-                result[line.Month] = line.Count;
-            }
-            return result;
 
-        }
-  
-  }
+    public Dictionary<string, int> getBarchart()
+    {
+      Dictionary<string, int> result = new Dictionary<string, int>();
+      foreach (var line in fietstrommels
+          .GroupBy(Trommel => new { Trommel.Deelgem })
+          .Select(group => new
+          {
+            Count = group.Count(),
+            Neighborhood = group.Key.Deelgem
+          })
+          .OrderByDescending(x => x.Count)
+          .Take(5)
+          )
+      {
+        result[line.Neighborhood] = line.Count;
+      }
+      return result;
+    }
+
+    public Dictionary<int, int> getBarchartGroup(string buurt)
+    {
+      Dictionary<int, int> result = new Dictionary<int, int>();
+      foreach (var line in fietsdiefstallen
+          .Where(diefstal => diefstal.Buurt == buurt)
+          .GroupBy(fiets => new { fiets.Begindatum.Month })
+          .Select(group => new
+          {
+            Month = group.Key.Month,
+            Count = group.Count()
+          })
+          .OrderBy(x => x.Month))
+      {
+        result[line.Month] = line.Count;
+      }
+      foreach (var line in fietstrommels
+          .Where(diefstal => diefstal.Deelgem == buurt)
+          .GroupBy(fiets => new { fiets.Mutdatum.Month })
+          .Select(group => new
+          {
+            Month = group.Key.Month,
+            Count = group.Count()
+          })
+          .OrderBy(x => x.Month))
+      {
+        result[line.Month] = line.Count;
+      }
+      return result;
+
+    }
 
     public Dictionary<string, int> getPiechartBrand()
     {
@@ -131,7 +136,6 @@ namespace App1
   
   public class FietsDiefstal
   {
-    
     public string Buurt { get; set; }
     public string merk { get; set; }
     public string kleur { get; set; }
@@ -143,8 +147,8 @@ namespace App1
   public class FietsTrommel
   {
     public string Straat { get; set; }
-    public float ycoord { get; set; }
-    public float xcoord { get; set; }
+    public string ycoord { get; set; }
+    public string xcoord { get; set; }
     public string Deelgem { get; set; }
     public DateTime Mutdatum { get; set; }
   }
