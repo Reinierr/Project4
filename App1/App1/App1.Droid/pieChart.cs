@@ -22,11 +22,44 @@ namespace App1.Droid
     protected override void OnCreate(Bundle savedInstanceState)
     {
       base.OnCreate(savedInstanceState);
-      SetContentView(Resource.Layout.pieChart);
-      PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
-      CreatePieChart piechart = new CreatePieChart();
-      view.Model = piechart.CreatePlotModel();
-    }
+      SetContentView(Resource.Layout.tablayout);
+            ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+            ActionBar.Tab tab = ActionBar.NewTab();
+            tab.SetText("PieChart Stolen Brands");
+            tab.SetIcon(Resource.Drawable.Icon);
+            tab.TabSelected += (sender, args) =>
+            {
+                SetContentView(Resource.Layout.barChart);
+                PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+                CreatePieChart barchart = new CreatePieChart();
+                view.Model = barchart.CreatePlotModel();
+            };
+            ActionBar.AddTab(tab);
+
+            tab = ActionBar.NewTab();
+            tab.SetText("Favorite Stolen Bike Colors");
+            tab.SetIcon(Resource.Drawable.Icon);
+            tab.TabSelected += (sender, args) =>
+            {
+                SetContentView(Resource.Layout.pieChart);
+                PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
+                //   view.Model = CreatePlotModel2();
+            };
+            ActionBar.AddTab(tab);
+            tab = ActionBar.NewTab();
+            tab.SetText("List all stolen bike");
+            tab.TabSelected += (sender, args) => {
+                SetContentView(Resource.Layout.pieChart);
+            };
+            ActionBar.AddTab(tab);
+            
+            tab = ActionBar.NewTab();
+            tab.SetText("List all stolen bike colors");
+            tab.TabSelected += (sender, args) => {
+                SetContentView(Resource.Layout.pieChart);
+            };
+            ActionBar.AddTab(tab);
+        }
   }
 
   public class CreatePieChart : IChart
