@@ -22,10 +22,33 @@ namespace App1.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.barChart);
-            PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
-            CreateBarChart barchart = new CreateBarChart();
-            view.Model = barchart.CreatePlotModel();
+            SetContentView(Resource.Layout.tablayout);
+            ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+            ActionBar.Tab tab = ActionBar.NewTab();
+            tab.SetText("Group Bar Chart");
+            tab.SetIcon(Resource.Drawable.barcharticon);
+            tab.TabSelected += (sender, args) =>
+            {
+                SetContentView(Resource.Layout.barChart);
+                PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+                CreateBarChart barchart = new CreateBarChart();
+                view.Model = barchart.CreatePlotModel();
+            };
+            ActionBar.AddTab(tab);
+
+            tab = ActionBar.NewTab();
+            tab.SetText("Single Bar Chart");
+            tab.SetIcon(Resource.Drawable.barcharticon);
+            tab.TabSelected += (sender, args) =>
+            {
+                SetContentView(Resource.Layout.barChart);
+                PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+             //   view.Model = CreatePlotModel2();
+            };
+            ActionBar.AddTab(tab);
+            //            PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+            //            CreateBarChart barchart = new CreateBarChart();
+            //            view.Model = barchart.CreatePlotModel();
         }
     }
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2140:TransparentMethodsMustNotReferenceCriticalCodeFxCopRule")]

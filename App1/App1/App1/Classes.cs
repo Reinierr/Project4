@@ -30,10 +30,7 @@ namespace App1
                 this.fietstrommels = records;
             }
         }
-        /// <summary>
-        /// Chart filler data
-        /// </summary>
-        /// <returns></returns>
+
         public Dictionary<int, int> getLinechart()
         {
             Dictionary<int, int> result = new Dictionary<int, int>();
