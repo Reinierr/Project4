@@ -31,7 +31,7 @@ namespace App1.Droid
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2140:TransparentMethodsMustNotReferenceCriticalCodeFxCopRule")]
   public class CreateLineChart : IChart
   {
-    public PlotModel CreatePlotModel() 
+    public PlotModel CreatePlotModel()
     {
       string title = "fietsdiefstallen per maand";
       var plotModel = new PlotModel
