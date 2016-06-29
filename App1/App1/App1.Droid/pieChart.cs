@@ -13,6 +13,7 @@ using OxyPlot.Xamarin.Android;
 using OxyPlot;
 using OxyPlot.Axes;
 using OxyPlot.Series;
+using Android.Graphics;
 
 namespace App1.Droid
 {
@@ -24,6 +25,7 @@ namespace App1.Droid
       base.OnCreate(savedInstanceState);
       SetContentView(Resource.Layout.tablayout);
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+            ActionBar.SetDisplayShowTitleEnabled(false);
             ActionBar.Tab tab = ActionBar.NewTab();
             tab.SetText("PieChart Stolen Brands");
             tab.SetIcon(Resource.Drawable.Icon);
@@ -31,6 +33,7 @@ namespace App1.Droid
             {
                 SetContentView(Resource.Layout.barChart);
                 PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+                view.SetBackgroundColor(Color.Black);
                 CreatePieChart barchart = new CreatePieChart();
                 view.Model = barchart.CreatePlotModel();
             };
