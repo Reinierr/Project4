@@ -123,7 +123,7 @@ namespace App1
             }
             return result;
         }
-
+        
         public Dictionary<string, int> getPiechartColor()
         {
             Dictionary<string, int> result = new Dictionary<string, int>();
@@ -140,7 +140,6 @@ namespace App1
   
   public class FietsDiefstal
   {
-    
     public string Buurt { get; set; }
     public string merk { get; set; }
     public string kleur { get; set; }
