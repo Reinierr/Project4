@@ -158,6 +158,5 @@ namespace App1
     public string Deelgem { get; set; }
     public DateTime Mutdatum { get; set; }
   }
-
-
+}
 
