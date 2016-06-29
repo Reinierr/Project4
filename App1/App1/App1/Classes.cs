@@ -137,7 +137,6 @@ namespace App1
             return result;
         }
     }
-}
   
   public class FietsDiefstal
   {
@@ -159,4 +158,3 @@ namespace App1
     public DateTime Mutdatum { get; set; }
   }
 }
-
