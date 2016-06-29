@@ -75,6 +75,9 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050003
 			public const int barchart = 2131034115;
 			
+			// aapt resource value: 0x7f050007
+			public const int frameLayout1 = 2131034119;
+			
 			// aapt resource value: 0x7f050002
 			public const int layoutContainer = 2131034114;
 			
@@ -117,6 +120,9 @@ namespace App1.Droid
 			
 			// aapt resource value: 0x7f030003
 			public const int pieChart = 2130903043;
+			
+			// aapt resource value: 0x7f030004
+			public const int savebike = 2130903044;
 			
 			static Layout()
 			{
