@@ -17,10 +17,15 @@ namespace App1.Droid
   [Activity(Label = "savebike", Icon = "@drawable/icon")]
   public class savebike : Activity
   {
+    public int _calId;
     protected override void OnCreate(Bundle savedInstanceState)
     {
+      //Calendar ID on phone
+      _calId = Intent.GetIntExtra("calId", 1);
+
       base.OnCreate(savedInstanceState);
       SetContentView(Resource.Layout.tablayout);
+      ActionBar.SetDisplayShowTitleEnabled(false);
       ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
 			ActionBar.SetDisplayShowTitleEnabled(false);
       ActionBar.Tab tab = ActionBar.NewTab();

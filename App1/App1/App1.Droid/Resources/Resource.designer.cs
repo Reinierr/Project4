@@ -78,6 +78,9 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050003
 			public const int barchart = 2131034115;
 			
+			// aapt resource value: 0x7f050001
+			public const int emptylayout = 2131034113;
+			
 			// aapt resource value: 0x7f050007
 			public const int frameLayout1 = 2131034119;
 			
@@ -105,9 +108,6 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050006
 			public const int pieChart = 2131034118;
 			
-			// aapt resource value: 0x7f050001
-			public const int plot_view = 2131034113;
-			
 			// aapt resource value: 0x7f050000
 			public const int plot_view_bar = 2131034112;
 			
@@ -131,22 +131,19 @@ namespace App1.Droid
 			public const int barChart = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int lineChart = 2130903041;
+			public const int emptylayout = 2130903041;
 			
 			// aapt resource value: 0x7f030002
 			public const int Main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int pieChart = 2130903043;
+			public const int savebike = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int savebike = 2130903044;
+			public const int savebike2 = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int savebike2 = 2130903045;
-			
-			// aapt resource value: 0x7f030006
-			public const int tablayout = 2130903046;
+			public const int tablayout = 2130903045;
 			
 			static Layout()
 			{
