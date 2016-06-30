@@ -108,7 +108,7 @@ namespace App1
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
       foreach (var line in fietstrommels
-          .Where(diefstal => diefstal.Deelgem == buurt)
+          .Where(diefstal => diefstal.Deelgem.ToLower() == buurt)
           .GroupBy(fiets => new { fiets.Mutdatum.Month })
           .Select(group => new
           {
@@ -126,6 +126,7 @@ namespace App1
     {
       Dictionary<string, int> result = new Dictionary<string, int>();
       foreach (var line in fietsdiefstallen
+        .Where(x => x.typef == "FIETS")
         .GroupBy(fiets => new { fiets.merk })
         .Select(group => new
         {
@@ -139,20 +140,57 @@ namespace App1
       }
       return result;
     }
+        public Dictionary<string, int> getPiechartBrandFull()
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            foreach (var line in fietsdiefstallen
+              .Where(x => x.typef == "FIETS")
+              .GroupBy(fiets => new { fiets.merk })
+              .Select(group => new
+              {
+                  Brand = group.Key.merk,
+                  Count = group.Count()
+              })
+              .OrderByDescending(x => x.Count))
+            {
+                result[line.Brand] = line.Count;
+            }
+            return result;
+        }
 
-    public Dictionary<string, int> getPiechartColor()
+        public Dictionary<string, int> getPiechartColor()
     {
       Dictionary<string, int> result = new Dictionary<string, int>();
       foreach (var line in fietsdiefstallen
         .GroupBy(fiets => new { fiets.kleur })
         .Select(group => new
         {
-          Color = group.Key,
+          Color = group.Key.kleur,
           Count = group.Count()
-        })) ;
-      return result;
+        })
+        .OrderByDescending(x => x.Count)
+        .Take(5))
+            {
+                result[line.Color] = line.Count;
+            }
+            return result;
+        }
+        public Dictionary<string, int> getPiechartColorFull()
+        {
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            foreach (var line in fietsdiefstallen
+              .GroupBy(fiets => new { fiets.kleur })
+              .Select(group => new
+              {
+                  Color = group.Key.kleur,
+                  Count = group.Count()
+              }) )
+              {
+                result[line.Color] = line.Count;
+            }
+            return result;
+        }
     }
-  }
 
   public class FietsDiefstal
   {
