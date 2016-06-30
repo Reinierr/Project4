@@ -3,9 +3,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-		android:background="#000">
+    android:background="#000">
     <FrameLayout
-				
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
@@ -48,5 +47,41 @@
             android:id="@+id/button3"
             android:layout_marginTop="463.0dp"
             android:layout_marginBottom="0.0dp" />
+        <TextView
+            android:text="Title:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/textView1"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginTop="15.5dp" />
+        <TextView
+            android:text="Description:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginTop="95.5dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText1"
+            android:visibility="invisible"
+            android:layout_marginTop="42.0dp"
+            android:singleLine="true"
+            android:text="Fiets Ophalen"
+            android:maxLength="50" />
+        <EditText
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+						android:visibility="invisible"
+            android:id="@+id/editText2"
+            android:layout_marginTop="124.5dp"
+            android:text="Op locatie:"
+            android:maxLength="200" />
     </FrameLayout>
 </LinearLayout>

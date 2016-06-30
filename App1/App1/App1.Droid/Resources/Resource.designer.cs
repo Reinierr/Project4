@@ -90,6 +90,12 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050008
 			public const int datePicker1 = 2131034120;
 			
+			// aapt resource value: 0x7f050010
+			public const int editText1 = 2131034128;
+			
+			// aapt resource value: 0x7f050011
+			public const int editText2 = 2131034129;
+			
 			// aapt resource value: 0x7f050001
 			public const int emptylayout = 2131034113;
 			
@@ -102,17 +108,17 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050004
 			public const int lineChart = 2131034116;
 			
-			// aapt resource value: 0x7f05000f
-			public const int linearLayout1 = 2131034127;
+			// aapt resource value: 0x7f050013
+			public const int linearLayout1 = 2131034131;
 			
-			// aapt resource value: 0x7f050010
-			public const int linearLayout2 = 2131034128;
+			// aapt resource value: 0x7f050014
+			public const int linearLayout2 = 2131034132;
 			
-			// aapt resource value: 0x7f050011
-			public const int linearLayout3 = 2131034129;
+			// aapt resource value: 0x7f050015
+			public const int linearLayout3 = 2131034133;
 			
-			// aapt resource value: 0x7f050012
-			public const int linearLayout4 = 2131034130;
+			// aapt resource value: 0x7f050016
+			public const int linearLayout4 = 2131034134;
 			
 			// aapt resource value: 0x7f050005
 			public const int myButton = 2131034117;
@@ -126,8 +132,14 @@ namespace App1.Droid
 			// aapt resource value: 0x7f05000a
 			public const int surfaceView1 = 2131034122;
 			
+			// aapt resource value: 0x7f050012
+			public const int tabHost1 = 2131034130;
+			
 			// aapt resource value: 0x7f05000e
-			public const int tabHost1 = 2131034126;
+			public const int textView1 = 2131034126;
+			
+			// aapt resource value: 0x7f05000f
+			public const int textView2 = 2131034127;
 			
 			// aapt resource value: 0x7f050009
 			public const int timePicker1 = 2131034121;
@@ -162,6 +174,9 @@ namespace App1.Droid
 			
 			// aapt resource value: 0x7f030005
 			public const int tablayout = 2130903045;
+			
+			// aapt resource value: 0x7f030006
+			public const int tablayout2 = 2130903046;
 			
 			static Layout()
 			{
