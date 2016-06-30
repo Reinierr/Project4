@@ -17,10 +17,7 @@ namespace App1.Droid
     [Activity(Label = "pielist")]
     public class pielist : ListActivity
     {
-        string[] data = { "one", "two", "three", "four", "five", "six", "seven", "ate", "nien", "windows Poep", "Fart" };
-        string[] data2 = { "three", "four", "five", "six", "seven", "ate", "nien", "windows Poep", "Fart", "one", "two" };
-
-        protected override void OnCreate(Bundle bundle)
+      protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
@@ -31,7 +28,9 @@ namespace App1.Droid
             tab.SetIcon(Resource.Drawable.Icon);
             tab.TabSelected += (sender, args) =>
             {
-                ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleDropDownItem1Line, data);
+                listofpieChart data = new listofpieChart();
+                List<string> test = data.listofpieChart1();
+                ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleDropDownItem1Line, test);
             };
             ActionBar.AddTab(tab);
 
@@ -40,10 +39,12 @@ namespace App1.Droid
             tab.SetIcon(Resource.Drawable.Icon);
             tab.TabSelected += (sender, args) =>
             {
-                ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleDropDownItem1Line, data2);
+                listofpieChartColor data2 = new listofpieChartColor();
+                List<string> test2 = data2.listofpieChart1();
+                ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleDropDownItem1Line, test2);
             };
             ActionBar.AddTab(tab);
-            
+
         }
 
 
@@ -53,5 +54,32 @@ namespace App1.Droid
         {
             base.OnListItemClick(l, v, position, id);
         }
+
     }
+    public class listofpieChart {
+        public List<string> listofpieChart1()
+        {
+            List<string> data = new List<string>();
+            Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartBrandFull();
+            foreach (KeyValuePair<string, int> item in fdBrand)
+            {
+                data.Add(item.Key + " totaal van " + item.Value );
+            }
+            return data;
+        }
+    }
+    public class listofpieChartColor
+    {
+        public List<string> listofpieChart1()
+        {
+            List<string> data = new List<string>();
+            Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartColorFull();
+            foreach (KeyValuePair<string, int> item in fdBrand)
+            {
+                data.Add(item.Key + " totaal van " + item.Value);
+            }
+            return data;
+        }
+    }
+
 }

@@ -47,9 +47,7 @@ namespace App1.Droid
              //   view.Model = CreatePlotModel2();
             };
             ActionBar.AddTab(tab);
-            //            PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
-            //            CreateBarChart barchart = new CreateBarChart();
-            //            view.Model = barchart.CreatePlotModel();
+
         }
     }
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2140:TransparentMethodsMustNotReferenceCriticalCodeFxCopRule")]
@@ -57,8 +55,8 @@ namespace App1.Droid
     {
       public PlotModel CreatePlotModel()
       {
-        string buurt = preLoad.csvFD.getBuurt("centrum-oost");
-        string buurt2 = "Feijenoord";
+        string buurt = "05 CENTRUM-OOST";
+        string buurt2 = "Centrum";
         var model = new PlotModel
         {
           Title = "BarChart",
@@ -69,7 +67,7 @@ namespace App1.Droid
 
         };
         var s1 = new ColumnSeries { Title = buurt, StrokeColor = OxyColors.Black, StrokeThickness = 1, FontSize = 24 };
-        Dictionary<int, int> fs = preLoad.csvFD.getBarchartGroupFD(buurt);
+            Dictionary<int, int> fs = preLoad.csvFD.getBarchartGroupFD(buurt);
         foreach (KeyValuePair<int, int> item in fs)
         {
           s1.Items.Add(new ColumnItem { Value = item.Value });
@@ -83,19 +81,12 @@ namespace App1.Droid
 
 
         var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom, FontSize = 24 };
-        categoryAxis.Labels.Add("Jan");
-        categoryAxis.Labels.Add("Feb");
-        categoryAxis.Labels.Add("Mrt");
-        categoryAxis.Labels.Add("Apr");
-        categoryAxis.Labels.Add("Mei");
-        categoryAxis.Labels.Add("Jun");
-        categoryAxis.Labels.Add("Jul");
-        categoryAxis.Labels.Add("Aug");
-        categoryAxis.Labels.Add("Sep");
-        categoryAxis.Labels.Add("Okt");
-        categoryAxis.Labels.Add("Nov");
-        categoryAxis.Labels.Add("Dec");
-        var valueAxis = new LinearAxis { Position = AxisPosition.Left, FontSize = 24 };
+            string[] months = { "Jan", "Feb", "Mrt", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" };
+            foreach (string m in months)
+            {
+                categoryAxis.Labels.Add(m);
+            }
+            var valueAxis = new LinearAxis { Position = AxisPosition.Left, FontSize = 24 };
 
         model.Series.Add(s1);
         model.Series.Add(s2);
