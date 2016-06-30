@@ -481,33 +481,47 @@ namespace App1.Droid
 			
 			// aapt resource value: 0x7f08002b
 			public const int linearLayout2 = 2131230763;
+			// aapt resource value: 0x7f050001
+			public const int buurtname = 2131034113;
 			
 			// aapt resource value: 0x7f08002c
 			public const int linearLayout3 = 2131230764;
 			
-			// aapt resource value: 0x7f08002d
-			public const int linearLayout4 = 2131230765;
+			// aapt resource value: 0x7f050011
+			public const int editText1 = 2131034129;
+			
+			// aapt resource value: 0x7f050012
+			public const int editText2 = 2131034130;
+			
+			// aapt resource value: 0x7f050002
+			public const int emptylayout = 2131034114;
 			
 			// aapt resource value: 0x7f080010
 			public const int map = 2131230736;
 			
 			// aapt resource value: 0x7f080014
 			public const int myButton = 2131230740;
+			// aapt resource value: 0x7f050003
+			public const int layoutContainer = 2131034115;
 			
 			// aapt resource value: 0x7f080001
 			public const int none = 2131230721;
 			
 			// aapt resource value: 0x7f080002
 			public const int normal = 2131230722;
+			// aapt resource value: 0x7f050014
+			public const int linearLayout1 = 2131034132;
 			
-			// aapt resource value: 0x7f080015
-			public const int pieChart = 2131230741;
+			// aapt resource value: 0x7f050015
+			public const int linearLayout2 = 2131034133;
 			
 			// aapt resource value: 0x7f080018
 			public const int place_autocomplete_clear_button = 2131230744;
+			// aapt resource value: 0x7f050016
+			public const int linearLayout3 = 2131034134;
 			
-			// aapt resource value: 0x7f08001a
-			public const int place_autocomplete_powered_by_google = 2131230746;
+			// aapt resource value: 0x7f050017
+			public const int linearLayout4 = 2131034135;
 			
 			// aapt resource value: 0x7f08001c
 			public const int place_autocomplete_prediction_primary_text = 2131230748;
@@ -550,7 +564,14 @@ namespace App1.Droid
 			
 			// aapt resource value: 0x7f080026
 			public const int textView2 = 2131230758;
+			// aapt resource value: 0x7f050013
+			public const int tabHost1 = 2131034131;
 			
+			// aapt resource value: 0x7f05000f
+			public const int textView1 = 2131034127;
+			
+			// aapt resource value: 0x7f050010
+			public const int textView2 = 2131034128;
 			// aapt resource value: 0x7f080020
 			public const int timePicker1 = 2131230752;
 			

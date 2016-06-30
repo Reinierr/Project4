@@ -43,7 +43,8 @@ namespace App1.Droid
       {
         SetContentView(Resource.Layout.barChart);
         PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
-        //   view.Model = CreatePlotModel2();
+        CreateBarChart barchart = new CreateBarChart();
+        view.Model = barchart.CreatePlotModel();
       };
       ActionBar.AddTab(tab);
       //            PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
@@ -55,7 +56,7 @@ namespace App1.Droid
         {
           this.buurt = buurtname.Text;
           PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
-          CreateBarChart barchart = new CreateBarChart(buurt);
+          CreateGroupedBarChart barchart = new CreateGroupedBarChart(buurt);
           view.Model = barchart.CreatePlotModel();
         }
         else
@@ -66,17 +67,19 @@ namespace App1.Droid
     }
   }
   [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2140:TransparentMethodsMustNotReferenceCriticalCodeFxCopRule")]
-  public class CreateBarChart : IChart
+  public class CreateGroupedBarChart : IChart
   {
     private string buurt;
     private string deelgem;
-    public CreateBarChart(string buurt)
+    public CreateGroupedBarChart(string buurt)
     {
       if(buurt.Length > 0)
       { 
         this.buurt = preLoad.csvFD.getBuurt(buurt);
         this.deelgem = buurt;
-      }else {
+      }
+      else 
+      {
         this.buurt = "";
       }
     }
@@ -115,6 +118,38 @@ namespace App1.Droid
 
       model.Series.Add(s1);
       model.Series.Add(s2);
+      model.Axes.Add(categoryAxis);
+      model.Axes.Add(valueAxis);
+
+      return model;
+    }
+  }
+
+  public class CreateBarChart : IChart
+  {
+    public PlotModel CreatePlotModel()
+    {
+      var model = new PlotModel
+      {
+        Title = "BarChart",
+        LegendPlacement = LegendPlacement.Outside,
+        LegendPosition = LegendPosition.BottomCenter,
+        LegendOrientation = LegendOrientation.Horizontal,
+        LegendBorderThickness = 0
+
+      };
+      var s1 = new ColumnSeries { Title = "Barchart", StrokeColor = OxyColors.Black, StrokeThickness = 1, FontSize = 24 };
+      var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom, FontSize = 24 };
+      Dictionary<string, int> fs = preLoad.csvFT.getBarchart();
+      foreach (KeyValuePair<string, int> item in fs)
+      {
+        s1.Items.Add(new ColumnItem { Value = item.Value });
+        categoryAxis.Labels.Add(item.Key);
+      }
+
+      var valueAxis = new LinearAxis { Position = AxisPosition.Left, FontSize = 24 };
+
+      model.Series.Add(s1);
       model.Axes.Add(categoryAxis);
       model.Axes.Add(valueAxis);
 
