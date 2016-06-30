@@ -3,6 +3,27 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <TextView
+        android:text="Calendar View Test"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1" />
+    <CalendarView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:id="@+id/calendarView" />
+    <TextView
+        android:text="Calendar Display"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/txtDisplay" />
+    <Button
+        android:text="Button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button" />
     <FrameLayout
         android:minWidth="25px"
         android:minHeight="25px"

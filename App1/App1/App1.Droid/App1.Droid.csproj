@@ -72,7 +72,9 @@
     <AndroidAsset Include="Assets\fietstrommels.csv" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
-    <None Include="Properties\AndroidManifest.xml" />
+    <None Include="Properties\AndroidManifest.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Assets\AboutAssets.txt" />
     <AndroidResource Include="Resources\layout\emptylayout.axml" />
     <AndroidResource Include="Resources\layout\barChart.axml">

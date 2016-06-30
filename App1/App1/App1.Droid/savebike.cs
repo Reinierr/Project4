@@ -21,6 +21,12 @@ namespace App1.Droid
     {
       base.OnCreate(savedInstanceState);
       SetContentView(Resource.Layout.tablayout);
+
+
+
+
+
+
       ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
       ActionBar.Tab tab = ActionBar.NewTab();
       tab.SetText("Calendar");
@@ -28,7 +34,31 @@ namespace App1.Droid
       tab.TabSelected += (sender, args) =>
       {
         SetContentView(Resource.Layout.savebike);
-        
+        var calendarView = FindViewById<CalendarView>(Resource.Id.calendarView);
+        var txtDisplay = FindViewById<TextView>(Resource.Id.txtDisplay);
+        Button button = FindViewById<Button>(Resource.Id.button);
+        var PickedDate = calendarView.Date;
+
+          txtDisplay.Text = "Date: " + calendarView.Date;
+
+          calendarView.DateChange += (s, e) =>
+          {
+              int day = e.DayOfMonth;
+              int month = e.Month;
+              int year = e.Year;
+              txtDisplay.Text = "Date: " + calendarView.Date;
+          };
+
+          button.Click += delegate
+          {
+              button.Text = txtDisplay.Text;
+              PickedDate = calendarView.Date;
+              button.Enabled = false;
+              calendarView.Enabled = false;
+          };
+
+
+
       };
       ActionBar.AddTab(tab);
 
@@ -40,6 +70,7 @@ namespace App1.Droid
         SetContentView(Resource.Layout.savebike2);
       };
       ActionBar.AddTab(tab);
+
 
     }
   }
