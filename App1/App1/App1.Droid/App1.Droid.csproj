@@ -73,8 +73,7 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
-    <AndroidResource Include="Resources\layout\lineChart.axml" />
-    <AndroidResource Include="Resources\layout\pieChart.axml" />
+    <AndroidResource Include="Resources\layout\emptylayout.axml" />
     <AndroidResource Include="Resources\layout\barChart.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
