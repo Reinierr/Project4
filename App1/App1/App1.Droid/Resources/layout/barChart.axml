@@ -4,12 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff">
-    <EditText
-        android:id="@+id/buurtname"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#000000"
-        android:hint="Buurt"/>
     <OxyPlot.Xamarin.Android.PlotView
         android:id="@+id/plot_view_bar"
         android:layout_width="match_parent"

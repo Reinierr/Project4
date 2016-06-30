@@ -32,7 +32,7 @@ namespace App1.Droid
       tab.SetIcon(Resource.Drawable.barcharticon);
       tab.TabSelected += (sender, args) =>
       {
-        SetContentView(Resource.Layout.barChart);
+        SetContentView(Resource.Layout.barChartEdit);
       };
       ActionBar.AddTab(tab);
 
