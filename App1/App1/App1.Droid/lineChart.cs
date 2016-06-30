@@ -16,68 +16,72 @@ using OxyPlot.Series;
 
 namespace App1.Droid
 {
-    [Activity(Label = "linechart", Icon = "@drawable/icon")]
-    public class linechart : Activity
+  [Activity(Label = "linechart", Icon = "@drawable/icon")]
+  public class linechart : Activity
+  {
+    protected override void OnCreate(Bundle savedInstanceState)
     {
-        protected override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.lineChart);
-            PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
-            view.Model = CreatePlotModel();
-        }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2140:TransparentMethodsMustNotReferenceCriticalCodeFxCopRule")]
-        protected PlotModel CreatePlotModel()
-        {
-            string title = "fietsdiefstallen per maand";
-            var plotModel = new PlotModel
-            {
-                Title = title,
-                TitleFontSize = 24,
-                LegendFontSize = 24,
-                LegendPlacement = LegendPlacement.Inside,
-                LegendPosition = LegendPosition.RightTop,
-                LegendOrientation = LegendOrientation.Horizontal,
-                LegendBorderThickness = 0
-
-            };
-            
-            var linearAxis = new LinearAxis { Position = AxisPosition.Left, Title = "Diefstal totaal", TitleFontSize = 20 };
-            var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom, FontSize = 24 };
-            
-            categoryAxis.Labels.Add("Jan");
-            categoryAxis.Labels.Add("Feb");
-            categoryAxis.Labels.Add("Mrt");
-            categoryAxis.Labels.Add("Apr");
-            categoryAxis.Labels.Add("Mei");
-            categoryAxis.Labels.Add("Jun");
-            categoryAxis.Labels.Add("Jul");
-            categoryAxis.Labels.Add("Aug");
-            categoryAxis.Labels.Add("Sep");
-            categoryAxis.Labels.Add("Okt");
-            categoryAxis.Labels.Add("Nov");
-            categoryAxis.Labels.Add("Dec");
-            
-
-            var series1 = new LineSeries
-            {
-                MarkerType = MarkerType.Circle,
-                MarkerSize = 4,
-                MarkerStroke = OxyColors.White,
-                Title= "totaal"
-            };
-
-            Dictionary<int, int> fd = preLoad.csvFD.getLinechart();
-            foreach(KeyValuePair<int, int> item in fd)
-            {
-                series1.Points.Add(new DataPoint(item.Key-1.5, item.Value));
-            }
-
-            plotModel.Series.Add(series1);
-            plotModel.Axes.Add(categoryAxis);
-            plotModel.Axes.Add(linearAxis);
-
-            return plotModel;
-        }
+      base.OnCreate(savedInstanceState);
+      SetContentView(Resource.Layout.barChart);
+      PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+      CreateLineChart linechart = new CreateLineChart();
+      view.Model = linechart.CreatePlotModel();
     }
+  }
+  [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2140:TransparentMethodsMustNotReferenceCriticalCodeFxCopRule")]
+  public class CreateLineChart : IChart
+  {
+    public PlotModel CreatePlotModel()
+    {
+      string title = "fietsdiefstallen per maand";
+      var plotModel = new PlotModel
+      {
+        Title = title,
+        TitleFontSize = 24,
+        LegendFontSize = 24,
+        LegendPlacement = LegendPlacement.Inside,
+        LegendPosition = LegendPosition.RightTop,
+        LegendOrientation = LegendOrientation.Horizontal,
+        LegendBorderThickness = 0
+
+      };
+
+      var linearAxis = new LinearAxis { Position = AxisPosition.Left, Title = "Diefstal totaal", TitleFontSize = 20 };
+      var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom, FontSize = 24 };
+
+      categoryAxis.Labels.Add("Jan");
+      categoryAxis.Labels.Add("Feb");
+      categoryAxis.Labels.Add("Mrt");
+      categoryAxis.Labels.Add("Apr");
+      categoryAxis.Labels.Add("Mei");
+      categoryAxis.Labels.Add("Jun");
+      categoryAxis.Labels.Add("Jul");
+      categoryAxis.Labels.Add("Aug");
+      categoryAxis.Labels.Add("Sep");
+      categoryAxis.Labels.Add("Okt");
+      categoryAxis.Labels.Add("Nov");
+      categoryAxis.Labels.Add("Dec");
+
+
+      var series1 = new LineSeries
+      {
+        MarkerType = MarkerType.Circle,
+        MarkerSize = 4,
+        MarkerStroke = OxyColors.White,
+        Title = "totaal"
+      };
+
+      Dictionary<int, int> fd = preLoad.csvFD.getLinechart();
+      foreach (KeyValuePair<int, int> item in fd)
+      {
+        series1.Points.Add(new DataPoint(item.Key - 1.5, item.Value));
+      }
+
+      plotModel.Series.Add(series1);
+      plotModel.Axes.Add(categoryAxis);
+      plotModel.Axes.Add(linearAxis);
+
+      return plotModel;
+    }
+  }
 }

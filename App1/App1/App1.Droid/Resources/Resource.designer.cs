@@ -48,16 +48,19 @@ namespace App1.Droid
 			public const int barchart3 = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int Icon = 2130837505;
+			public const int barcharticon = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int linechart3 = 2130837506;
+			public const int Icon = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int piechart3 = 2130837507;
+			public const int linechart3 = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int savebike3 = 2130837508;
+			public const int piechart3 = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int savebike3 = 2130837509;
 			
 			static Drawable()
 			{
@@ -75,6 +78,9 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050003
 			public const int barchart = 2131034115;
 			
+			// aapt resource value: 0x7f050001
+			public const int emptylayout = 2131034113;
+			
 			// aapt resource value: 0x7f050007
 			public const int frameLayout1 = 2131034119;
 			
@@ -84,17 +90,29 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050004
 			public const int lineChart = 2131034116;
 			
+			// aapt resource value: 0x7f050009
+			public const int linearLayout1 = 2131034121;
+			
+			// aapt resource value: 0x7f05000a
+			public const int linearLayout2 = 2131034122;
+			
+			// aapt resource value: 0x7f05000b
+			public const int linearLayout3 = 2131034123;
+			
+			// aapt resource value: 0x7f05000c
+			public const int linearLayout4 = 2131034124;
+			
 			// aapt resource value: 0x7f050005
 			public const int myButton = 2131034117;
 			
 			// aapt resource value: 0x7f050006
 			public const int pieChart = 2131034118;
 			
-			// aapt resource value: 0x7f050001
-			public const int plot_view = 2131034113;
-			
 			// aapt resource value: 0x7f050000
 			public const int plot_view_bar = 2131034112;
+			
+			// aapt resource value: 0x7f050008
+			public const int tabHost1 = 2131034120;
 			
 			static Id()
 			{
@@ -113,16 +131,19 @@ namespace App1.Droid
 			public const int barChart = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int lineChart = 2130903041;
+			public const int emptylayout = 2130903041;
 			
 			// aapt resource value: 0x7f030002
 			public const int Main = 2130903042;
 			
 			// aapt resource value: 0x7f030003
-			public const int pieChart = 2130903043;
+			public const int savebike = 2130903043;
 			
 			// aapt resource value: 0x7f030004
-			public const int savebike = 2130903044;
+			public const int savebike2 = 2130903044;
+			
+			// aapt resource value: 0x7f030005
+			public const int tablayout = 2130903045;
 			
 			static Layout()
 			{

@@ -3,9 +3,5 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff">
-    <OxyPlot.Xamarin.Android.PlotView
-        android:id="@+id/plot_view_bar"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-</LinearLayout>
+    android:background="#FFFFFF"
+    android:id="@+id/emptylayout"/>
