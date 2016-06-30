@@ -17,6 +17,35 @@ namespace App1.Droid
   [Activity(Label = "savebike", Icon = "@drawable/icon")]
   public class savebike : Activity
   {
+
+		private void switchState(int state, Button button1, Button button2, Button button3, DatePicker datePicker, TimePicker timePicker) {
+			if (state == 0) {
+				button1.Text = "Apply Date";
+				button2.Text = "Apply Time";
+				button3.Text = "Continue";
+				button2.Enabled = false;
+				button3.Enabled = false;
+				datePicker.Visibility = ViewStates.Visible;
+				timePicker.Visibility = ViewStates.Invisible;
+			}else if(state == 1) {
+				button1.Text = "Change Date";
+				button2.Text = "Apply Time";
+				button3.Text = "Continue";
+				button2.Enabled = true;
+				button3.Enabled = false;
+				datePicker.Visibility = ViewStates.Invisible;
+				timePicker.Visibility = ViewStates.Visible;
+			}else if (state == 2) {
+				button1.Text = "Change Date";
+				button2.Text = "Change Time";
+				button3.Text = "Continue";
+				button2.Enabled = true;
+				button3.Enabled = true;
+				datePicker.Visibility = ViewStates.Invisible;
+				timePicker.Visibility = ViewStates.Visible;
+			}
+		}
+
     public int _calId;
     protected override void OnCreate(Bundle savedInstanceState)
     {
@@ -34,8 +63,38 @@ namespace App1.Droid
       tab.TabSelected += (sender, args) =>
       {
         SetContentView(Resource.Layout.savebike);
-        
-      };
+				var button1 = FindViewById<Button>(Resource.Id.button1);
+				var button2 = FindViewById<Button>(Resource.Id.button2);
+				var button3 = FindViewById<Button>(Resource.Id.button3);
+				var timePicker = FindViewById<TimePicker>(Resource.Id.timePicker1);
+				var datePicker = FindViewById<DatePicker>(Resource.Id.datePicker1);
+				int status = 0;
+				button1.Click += delegate {
+					if (status == 0) {
+						status = 1;
+					}
+					else {
+						status = 0;
+					}
+					this.switchState(status, button1, button2, button3, datePicker, timePicker);
+				};
+				button2.Click += delegate {
+					if (status == 1) {
+						status = 2;
+					}
+					else if(status == 2){
+						status = 1;
+					}
+					this.switchState(status, button1, button2, button3, datePicker, timePicker);
+				};
+				button3.Click += delegate {
+					status = 4;
+					this.switchState(status, button1, button2, button3, datePicker, timePicker);
+				};
+
+
+				//AddEventCalendar.AddEvent(this, _calId, "This is a Test", "Lorem Ipsum perpetuum mobile", ))
+			};
       ActionBar.AddTab(tab);
 
       tab = ActionBar.NewTab();
