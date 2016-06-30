@@ -22,6 +22,7 @@ namespace App1.Droid
       base.OnCreate(savedInstanceState);
       SetContentView(Resource.Layout.tablayout);
       ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+			ActionBar.SetDisplayShowTitleEnabled(false);
       ActionBar.Tab tab = ActionBar.NewTab();
       tab.SetText("Calendar");
       tab.SetIcon(Resource.Drawable.Icon);
