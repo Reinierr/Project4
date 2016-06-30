@@ -30,4 +30,8 @@ namespace App1.Droid
       csvFT = new CSVConnection("fietstrommel", new StreamReader(Assets.Open("fietstrommels.csv")));
     }
   }
+  public interface IChart
+  {
+    OxyPlot.PlotModel CreatePlotModel();
+  }
 }
