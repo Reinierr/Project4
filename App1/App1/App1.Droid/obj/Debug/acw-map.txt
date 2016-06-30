@@ -1,0 +1,32 @@
+App1.Droid.barchart, App1.Droid;md50170a25da682dd459b9251c65ebe3a7a.barchart
+App1.Droid.barchart, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50170a25da682dd459b9251c65ebe3a7a.barchart
+App1.Droid.barchart;md50170a25da682dd459b9251c65ebe3a7a.barchart
+app1.droid.barchart;md50170a25da682dd459b9251c65ebe3a7a.barchart
+App1.Droid.preLoad, App1.Droid;md50170a25da682dd459b9251c65ebe3a7a.preLoad
+App1.Droid.preLoad, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50170a25da682dd459b9251c65ebe3a7a.preLoad
+App1.Droid.preLoad;md50170a25da682dd459b9251c65ebe3a7a.preLoad
+app1.droid.preLoad;md50170a25da682dd459b9251c65ebe3a7a.preLoad
+App1.Droid.linechart, App1.Droid;md50170a25da682dd459b9251c65ebe3a7a.linechart
+App1.Droid.linechart, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50170a25da682dd459b9251c65ebe3a7a.linechart
+App1.Droid.linechart;md50170a25da682dd459b9251c65ebe3a7a.linechart
+app1.droid.linechart;md50170a25da682dd459b9251c65ebe3a7a.linechart
+App1.Droid.MainActivity, App1.Droid;md50170a25da682dd459b9251c65ebe3a7a.MainActivity
+App1.Droid.MainActivity, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50170a25da682dd459b9251c65ebe3a7a.MainActivity
+App1.Droid.MainActivity;md50170a25da682dd459b9251c65ebe3a7a.MainActivity
+app1.droid.MainActivity;md50170a25da682dd459b9251c65ebe3a7a.MainActivity
+App1.Droid.piechart, App1.Droid;md50170a25da682dd459b9251c65ebe3a7a.piechart
+App1.Droid.piechart, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50170a25da682dd459b9251c65ebe3a7a.piechart
+App1.Droid.piechart;md50170a25da682dd459b9251c65ebe3a7a.piechart
+app1.droid.piechart;md50170a25da682dd459b9251c65ebe3a7a.piechart
+App1.Droid.pielist, App1.Droid;md50170a25da682dd459b9251c65ebe3a7a.pielist
+App1.Droid.pielist, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50170a25da682dd459b9251c65ebe3a7a.pielist
+App1.Droid.pielist;md50170a25da682dd459b9251c65ebe3a7a.pielist
+app1.droid.pielist;md50170a25da682dd459b9251c65ebe3a7a.pielist
+App1.Droid.savebike, App1.Droid;md50170a25da682dd459b9251c65ebe3a7a.savebike
+App1.Droid.savebike, App1.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md50170a25da682dd459b9251c65ebe3a7a.savebike
+App1.Droid.savebike;md50170a25da682dd459b9251c65ebe3a7a.savebike
+app1.droid.savebike;md50170a25da682dd459b9251c65ebe3a7a.savebike
+OxyPlot.Xamarin.Android.PlotView, OxyPlot.Xamarin.Android;md576548fdf6897b70553b6b405e9653aa0.PlotView
+OxyPlot.Xamarin.Android.PlotView, OxyPlot.Xamarin.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md576548fdf6897b70553b6b405e9653aa0.PlotView
+OxyPlot.Xamarin.Android.PlotView;md576548fdf6897b70553b6b405e9653aa0.PlotView
+oxyplot.xamarin.android.PlotView;md576548fdf6897b70553b6b405e9653aa0.PlotView

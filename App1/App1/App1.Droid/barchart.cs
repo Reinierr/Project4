@@ -58,6 +58,9 @@ namespace App1.Droid
           PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
           CreateGroupedBarChart barchart = new CreateGroupedBarChart(buurt);
           view.Model = barchart.CreatePlotModel();
+          InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
+
+          inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
         }
         else
         {

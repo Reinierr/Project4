@@ -2,5 +2,4 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">App1.Droid</string>
-  <string name="google_maps_key">AIzaSyD6bTPU4ipZ1rgYueHSydGOwqMRD0Mq_DQ</string>
 </resources>
