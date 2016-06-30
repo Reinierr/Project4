@@ -184,7 +184,8 @@ namespace App1
               {
                   Color = group.Key.kleur,
                   Count = group.Count()
-              }) )
+              })
+              .OrderByDescending(x => x.Count))
               {
                 result[line.Color] = line.Count;
             }
