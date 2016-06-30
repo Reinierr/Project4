@@ -30,6 +30,7 @@ namespace App1
         this.fietstrommels = records;
       }
     }
+
     /// <summary>
     /// Chart filler data
     /// </summary>
@@ -103,8 +104,6 @@ namespace App1
       }
       return result;
     }
-
-
 
     public Dictionary<string, int> getPiechartBrand()
     {
