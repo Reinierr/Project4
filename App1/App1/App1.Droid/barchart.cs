@@ -105,20 +105,13 @@ namespace App1.Droid
       }
 
 
-      var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom, FontSize = 24 };
-      categoryAxis.Labels.Add("Jan");
-      categoryAxis.Labels.Add("Feb");
-      categoryAxis.Labels.Add("Mrt");
-      categoryAxis.Labels.Add("Apr");
-      categoryAxis.Labels.Add("Mei");
-      categoryAxis.Labels.Add("Jun");
-      categoryAxis.Labels.Add("Jul");
-      categoryAxis.Labels.Add("Aug");
-      categoryAxis.Labels.Add("Sep");
-      categoryAxis.Labels.Add("Okt");
-      categoryAxis.Labels.Add("Nov");
-      categoryAxis.Labels.Add("Dec");
-      var valueAxis = new LinearAxis { Position = AxisPosition.Left, FontSize = 24 };
+        var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom, FontSize = 24 };
+            string[] months = { "Jan", "Feb", "Mrt", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" };
+            foreach (string m in months)
+            {
+                categoryAxis.Labels.Add(m);
+            }
+            var valueAxis = new LinearAxis { Position = AxisPosition.Left, FontSize = 24 };
 
       model.Series.Add(s1);
       model.Series.Add(s2);

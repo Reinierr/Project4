@@ -80,6 +80,20 @@ namespace App1.Droid
 			
 			// aapt resource value: 0x7f050000
 			public const int buurtname = 2131034112;
+			// aapt resource value: 0x7f05000b
+			public const int button1 = 2131034123;
+			
+			// aapt resource value: 0x7f05000c
+			public const int button2 = 2131034124;
+			
+			// aapt resource value: 0x7f05000d
+			public const int button3 = 2131034125;
+			
+			// aapt resource value: 0x7f050008
+			public const int datePicker1 = 2131034120;
+			
+			// aapt resource value: 0x7f050001
+			public const int emptylayout = 2131034113;
 			
 			// aapt resource value: 0x7f050002
 			public const int emptylayout = 2131034114;
@@ -90,15 +104,21 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050003
 			public const int layoutContainer = 2131034115;
 			
-			// aapt resource value: 0x7f050005
-			public const int lineChart = 2131034117;
+			// aapt resource value: 0x7f050009
+			public const int linearLayout1 = 2131034121;
 			
+			// aapt resource value: 0x7f050010
+			public const int linearLayout2 = 2131034128;
 			// aapt resource value: 0x7f05000a
 			public const int linearLayout1 = 2131034122;
 			
+			// aapt resource value: 0x7f050011
+			public const int linearLayout3 = 2131034129;
 			// aapt resource value: 0x7f05000b
 			public const int linearLayout2 = 2131034123;
 			
+			// aapt resource value: 0x7f050012
+			public const int linearLayout4 = 2131034130;
 			// aapt resource value: 0x7f05000c
 			public const int linearLayout3 = 2131034124;
 			
@@ -114,6 +134,14 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050001
 			public const int plot_view_bar = 2131034113;
 			
+			// aapt resource value: 0x7f05000a
+			public const int surfaceView1 = 2131034122;
+			
+			// aapt resource value: 0x7f05000e
+			public const int tabHost1 = 2131034126;
+			
+			// aapt resource value: 0x7f050009
+			public const int timePicker1 = 2131034121;
 			// aapt resource value: 0x7f050009
 			public const int tabHost1 = 2131034121;
 			
@@ -147,9 +175,6 @@ namespace App1.Droid
 			
 			// aapt resource value: 0x7f030005
 			public const int tablayout = 2130903045;
-			
-			// aapt resource value: 0x7f030006
-			public const int tablayout2 = 2130903046;
 			
 			static Layout()
 			{
