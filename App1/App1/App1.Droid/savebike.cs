@@ -106,6 +106,7 @@ namespace App1.Droid
       };
       ActionBar.AddTab(tab);
 
+
     }
   }
   public class AddEventCalendar

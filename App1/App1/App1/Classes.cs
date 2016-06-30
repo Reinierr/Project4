@@ -51,6 +51,23 @@ namespace App1
       }
       return result;
     }
+
+    public string getBuurt(string action)
+    {
+      string buurt = "";
+      foreach (var line in fietsdiefstallen
+        .Where(diefstal => diefstal.Buurt.Contains(action.ToUpper()))
+        .GroupBy(diefstal => diefstal.Buurt)
+        .Select(group => new { Buurt = group.Key }))
+        {
+          if(line.Buurt.Length == (action.Length + 3))
+          {
+            buurt = line.Buurt;
+          }
+        }
+      return buurt;
+    }
+
     public Dictionary<string, int> getBarchart()
     {
       Dictionary<string, int> result = new Dictionary<string, int>();
