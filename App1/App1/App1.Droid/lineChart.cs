@@ -22,8 +22,8 @@ namespace App1.Droid
     protected override void OnCreate(Bundle savedInstanceState)
     {
       base.OnCreate(savedInstanceState);
-      SetContentView(Resource.Layout.lineChart);
-      PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
+      SetContentView(Resource.Layout.barChart);
+      PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
       CreateLineChart linechart = new CreateLineChart();
       view.Model = linechart.CreatePlotModel();
     }

@@ -44,26 +44,37 @@ namespace App1.Droid
             tab.SetIcon(Resource.Drawable.Icon);
             tab.TabSelected += (sender, args) =>
             {
-                SetContentView(Resource.Layout.pieChart);
-                PlotView view = FindViewById<PlotView>(Resource.Id.plot_view);
-                //   view.Model = CreatePlotModel2();
+                SetContentView(Resource.Layout.barChart);
+                PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+                view.SetBackgroundColor(Color.Black);
+             //   view.Model = CreatePlotModel2();
             };
             ActionBar.AddTab(tab);
             tab = ActionBar.NewTab();
             tab.SetText("List all stolen bike");
             tab.TabSelected += (sender, args) => {
-                SetContentView(Resource.Layout.pieChart);
+
+                //      SetContentView(Resource.Layout.emptylayout);
+                //      LinearLayout view = FindViewById<LinearLayout>(Resource.Id.emptylayout);
+                //      view.SetBackgroundColor(Color.Linen);
+                SetContentView(Resource.Layout.tablayout);
+                var intent = new Intent(this, typeof(pielist));
+                StartActivity(intent);
+
             };
             ActionBar.AddTab(tab);
             
             tab = ActionBar.NewTab();
             tab.SetText("List all stolen bike colors");
             tab.TabSelected += (sender, args) => {
-                SetContentView(Resource.Layout.pieChart);
+                SetContentView(Resource.Layout.emptylayout);
+                LinearLayout view = FindViewById<LinearLayout>(Resource.Id.emptylayout);
+                view.SetBackgroundColor(Color.DarkSeaGreen);
             };
             ActionBar.AddTab(tab);
         }
   }
+   
 
   public class CreatePieChart : IChart
   {
@@ -71,7 +82,7 @@ namespace App1.Droid
     {
       var modelP1 = new PlotModel { Title = "Most stolen bike brands", TitleColor = OxyColors.White };
 
-      var seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0, InsideLabelFormat = "{1}: {2:0} %", OutsideLabelFormat = "" };
+      var seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.8, AngleSpan = 360, StartAngle = 0, InsideLabelFormat = "{1}: {2:0} %", OutsideLabelFormat = "" , FontSize= 20};
 
       Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartBrand();
       foreach (KeyValuePair<string, int> item in fdBrand)
@@ -84,4 +95,24 @@ namespace App1.Droid
       return modelP1;
     }
   }
+}
+namespace App1.Droid
+{
+    [Activity(Label = "piechart", Icon = "@drawable/icon")]
+    public class pielist : ListActivity
+    {
+        string[] data = { "one", "two", "three", "four", "five", "six", "seven", "ate", "nien", "windows Poep", "Fart" };
+
+        protected override void OnCreate(Bundle bundle)
+        {
+            base.OnCreate(bundle);
+            
+            ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleDropDownItem1Line, data);
+        }
+        protected override void OnListItemClick(ListView l, View v, int position, long id)
+        {
+            base.OnListItemClick(l, v, position, id);
+        }
+    }
+
 }
