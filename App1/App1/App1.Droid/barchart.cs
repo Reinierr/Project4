@@ -57,7 +57,7 @@ namespace App1.Droid
     {
       public PlotModel CreatePlotModel()
       {
-        string buurt = "05 CENTRUM-OOST";
+        string buurt = preLoad.csvFD.getBuurt("centrum-oost");
         string buurt2 = "Feijenoord";
         var model = new PlotModel
         {
