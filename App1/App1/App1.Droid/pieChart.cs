@@ -51,27 +51,14 @@ namespace App1.Droid
             };
             ActionBar.AddTab(tab);
             tab = ActionBar.NewTab();
-            tab.SetText("List all stolen bike");
+            tab.SetText("List for piecharts");
             tab.TabSelected += (sender, args) => {
 
-                //      SetContentView(Resource.Layout.emptylayout);
-                //      LinearLayout view = FindViewById<LinearLayout>(Resource.Id.emptylayout);
-                //      view.SetBackgroundColor(Color.Linen);
-                SetContentView(Resource.Layout.tablayout);
                 var intent = new Intent(this, typeof(pielist));
                 StartActivity(intent);
 
             };
-            ActionBar.AddTab(tab);
-            
-            tab = ActionBar.NewTab();
-            tab.SetText("List all stolen bike colors");
-            tab.TabSelected += (sender, args) => {
-                SetContentView(Resource.Layout.emptylayout);
-                LinearLayout view = FindViewById<LinearLayout>(Resource.Id.emptylayout);
-                view.SetBackgroundColor(Color.DarkSeaGreen);
-            };
-            ActionBar.AddTab(tab);
+            ActionBar.AddTab(tab);           
         }
   }
    
@@ -96,23 +83,4 @@ namespace App1.Droid
     }
   }
 }
-namespace App1.Droid
-{
-    [Activity(Label = "piechart", Icon = "@drawable/icon")]
-    public class pielist : ListActivity
-    {
-        string[] data = { "one", "two", "three", "four", "five", "six", "seven", "ate", "nien", "windows Poep", "Fart" };
 
-        protected override void OnCreate(Bundle bundle)
-        {
-            base.OnCreate(bundle);
-            
-            ListAdapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleDropDownItem1Line, data);
-        }
-        protected override void OnListItemClick(ListView l, View v, int position, long id)
-        {
-            base.OnListItemClick(l, v, position, id);
-        }
-    }
-
-}
