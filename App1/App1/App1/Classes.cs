@@ -72,11 +72,11 @@ namespace App1
     {
       Dictionary<string, int> result = new Dictionary<string, int>();
       foreach (var line in fietstrommels
-          .GroupBy(Trommel => new { Trommel.Deelgem })
+          .GroupBy(trommel => trommel.Deelgem)
           .Select(group => new
           {
             Count = group.Count(),
-            Neighborhood = group.Key.Deelgem
+            Neighborhood = group.Key
           })
           .OrderByDescending(x => x.Count)
           .Take(5)
