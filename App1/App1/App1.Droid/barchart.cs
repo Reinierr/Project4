@@ -16,7 +16,7 @@ using OxyPlot.Series;
 
 namespace App1.Droid
 {
-    [Activity(Label = "barchart", Icon = "@drawable/icon")]
+    [Activity(Label = "barchart", Icon = "@drawable/barcharticon")]
     public class barchart : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)
@@ -24,6 +24,7 @@ namespace App1.Droid
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.tablayout);
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+            ActionBar.SetDisplayShowTitleEnabled(false);
             ActionBar.Tab tab = ActionBar.NewTab();
             tab.SetText("Group Bar Chart");
             tab.SetIcon(Resource.Drawable.barcharticon);
