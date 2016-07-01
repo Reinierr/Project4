@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="1" android:versionName="1.0" package="App1.Droid">
+  <!--	<uses-sdk android:minSdkVersion="15" /> -->
+  <uses-permission android:name="android.permission.READ_CALENDAR" />
+  <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <application android:label="App1.Droid" android:name="md50170a25da682dd459b9251c65ebe3a7a.preLoad" android:allowBackup="true" android:icon="@drawable/barcharticon" android:debuggable="true">
+    <activity android:icon="@drawable/barcharticon" android:label="barchart" android:name="md50170a25da682dd459b9251c65ebe3a7a.barchart" />
+    <activity android:icon="@drawable/icon" android:label="linechart" android:name="md50170a25da682dd459b9251c65ebe3a7a.linechart" />
+    <activity android:icon="@drawable/icon" android:label="Bike Crime 'n Storage" android:name="md50170a25da682dd459b9251c65ebe3a7a.MainActivity">
+      <intent-filter>
+        <action android:name="android.intent.action.MAIN" />
+        <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+    </activity>
+    <activity android:icon="@drawable/icon" android:label="piechart" android:name="md50170a25da682dd459b9251c65ebe3a7a.piechart" />
+    <activity android:label="pielist" android:name="md50170a25da682dd459b9251c65ebe3a7a.pielist" />
+    <activity android:icon="@drawable/icon" android:label="savebike" android:name="md50170a25da682dd459b9251c65ebe3a7a.savebike" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="App1.Droid.mono.MonoRuntimeProvider.__mono_init__" />
+    <!--suppress ExportedReceiver-->
+    <receiver android:name="mono.android.Seppuku">
+      <intent-filter>
+        <action android:name="mono.android.intent.action.SEPPUKU" />
+        <category android:name="mono.android.intent.category.SEPPUKU.App1.Droid" />
+      </intent-filter>
+    </receiver>
+  </application>
+  <!--suppress UsesMinSdkAttributes-->
+  <uses-sdk android:minSdkVersion="14" />
+</manifest>
