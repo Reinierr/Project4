@@ -28,7 +28,7 @@ namespace App1.Droid
       return Convert.ToDateTime(dateTimeString + timeString);
     }
 
-		private void switchState(int state, Button button1, Button button2, Button button3, DatePicker datePicker, TimePicker timePicker, TextView label1,TextView label2, EditText textbox1, EditText textbox2, bool gpsConnected, LocationManager locationManager) {
+		private void switchState(int state, Button button1, Button button2, Button button3, DatePicker datePicker, TimePicker timePicker, TextView label1,TextView label2, EditText textbox1, EditText textbox2) {
 			
 			if (state == 0) {
 				button1.Text = "Apply Date";
@@ -55,18 +55,6 @@ namespace App1.Droid
 				datePicker.Visibility = ViewStates.Invisible;
 				timePicker.Visibility = ViewStates.Visible;
 			}else if (state == 3) {
-				ConnectivityManager a = (ConnectivityManager)GetSystemService(ConnectivityService);
-				NetworkInfo b = a.ActiveNetworkInfo;
-				bool isOnline = (b != null) && b.IsConnected;
-				if (isOnline) {
-					if (gpsConnected) {
-						button1.Enabled = true;
-					}else {
-						button1.Enabled = false;
-					}
-				}else {
-					button1.Enabled = false;
-				}
 				button2.Enabled = true;
 				button3.Enabled = false;
 				button1.Text = "Add Current Location";
@@ -130,10 +118,10 @@ namespace App1.Droid
 					else if (status == 1 || status == 2){
 						status = 0;
 					}else {
-						// GPS button functionality here
-						//locationManager.)
+                      Address adres = adresC.GetAddress();
+                      textbox2.Text = "Location: "+adres.GetAddressLine(0)+" "+adres.GetAddressLine(1);
 					}
-					this.switchState(status, button1, button2, button3, datePicker, timePicker, label1, label2, textbox1, textbox2, checkGps(locationManager), locationManager);
+					this.switchState(status, button1, button2, button3, datePicker, timePicker, label1, label2, textbox1, textbox2);
 				};
 				button2.Click += delegate {
 					if (status == 1) {
@@ -157,7 +145,7 @@ namespace App1.Droid
 						//System.Diagnostics.Debug.WriteLine("AAAAAmemes");
 						this.Finish();
 					}
-					this.switchState(status, button1, button2, button3, datePicker, timePicker, label1, label2, textbox1, textbox2, checkGps(locationManager), locationManager);
+					this.switchState(status, button1, button2, button3, datePicker, timePicker, label1, label2, textbox1, textbox2);
 				};
 				button3.Click += delegate {
 					if (status == 2) {
@@ -166,7 +154,7 @@ namespace App1.Droid
 						System.Diagnostics.Debug.WriteLine(dateTime1.ToString() + "----" + dateTime2.ToString());
 						status = 3;
 					}
-					this.switchState(status, button1, button2, button3, datePicker, timePicker, label1, label2, textbox1, textbox2, checkGps(locationManager), locationManager);
+					this.switchState(status, button1, button2, button3, datePicker, timePicker, label1, label2, textbox1, textbox2);
 				};
 
 
