@@ -134,14 +134,14 @@ namespace App1.Droid
     {
       var model = new PlotModel
       {
-        Title = "BarChart",
+        Title = "Top 5 wijken",
         LegendPlacement = LegendPlacement.Outside,
         LegendPosition = LegendPosition.BottomCenter,
         LegendOrientation = LegendOrientation.Horizontal,
         LegendBorderThickness = 0
 
       };
-      var s1 = new ColumnSeries { Title = "Barchart", StrokeColor = OxyColors.Black, StrokeThickness = 1, FontSize = 24 };
+      var s1 = new ColumnSeries { Title = "Fietstrommels", StrokeColor = OxyColors.Black, StrokeThickness = 1, FontSize = 24 };
       var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom, FontSize = 24 };
       Dictionary<string, int> fs = preLoad.csvFT.getBarchart();
       foreach (KeyValuePair<string, int> item in fs)
