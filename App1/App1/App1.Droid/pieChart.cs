@@ -17,13 +17,13 @@ using Android.Graphics;
 
 namespace App1.Droid
 {
-  [Activity(Label = "piechart", Icon = "@drawable/icon")]
-  public class piechart : Activity
-  {
-    protected override void OnCreate(Bundle savedInstanceState)
+    [Activity(Label = "piechart", Icon = "@drawable/icon")]
+    public class piechart : Activity
     {
-      base.OnCreate(savedInstanceState);
-      SetContentView(Resource.Layout.tablayout);
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.tablayout);
             ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
             ActionBar.SetDisplayShowTitleEnabled(false);
             ActionBar.Tab tab = ActionBar.NewTab();
@@ -53,44 +53,44 @@ namespace App1.Droid
             ActionBar.AddTab(tab);
             tab = ActionBar.NewTab();
             tab.SetText("List for piecharts");
-            tab.TabSelected += (sender, args) => {
+            tab.TabSelected += (sender, args) =>
+            {
 
                 var intent = new Intent(this, typeof(pielist));
                 StartActivity(intent);
 
             };
-            ActionBar.AddTab(tab);           
+            ActionBar.AddTab(tab);
         }
-  }
-   
-
-  public class CreatePieChart : IChart
-  {
-    public PlotModel CreatePlotModel()
-    {
-      var modelP1 = new PlotModel { Title = "Most stolen bike brands top 5", TitleColor = OxyColors.White };
-
-      var seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.7, AngleSpan = 360, StartAngle = 0, InsideLabelFormat = "{1}: {2:0} %", OutsideLabelFormat = "" , FontSize= 20};
-
-      Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartBrand();
-      foreach (KeyValuePair<string, int> item in fdBrand)
-      {
-        seriesP1.Slices.Add(new PieSlice(item.Key, item.Value) { IsExploded = true });
-      }
-
-      modelP1.Series.Add(seriesP1);
-
-      return modelP1;
     }
-  }
+
+
+    public class CreatePieChart : IChart
+    {
+        public PlotModel CreatePlotModel()
+        {
+            var modelP1 = new PlotModel { Title = "Most stolen bike brands top 5", TitleColor = OxyColors.White };
+            IFactory factory = new ConcreteFactory();
+            var seriesP1 = factory.CreatePieSeriesBasic();
+
+            Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartBrand();
+            foreach (KeyValuePair<string, int> item in fdBrand)
+            {
+                seriesP1.Slices.Add(new PieSlice(item.Key, item.Value) { IsExploded = true });
+            }
+
+            modelP1.Series.Add(seriesP1);
+
+            return modelP1;
+        }
+    }
     public class CreatePieChart2 : IChart
     {
         public PlotModel CreatePlotModel()
         {
             var modelP1 = new PlotModel { Title = "Most stolen bike Color top 5", TitleColor = OxyColors.White };
-
-            var seriesP1 = new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.7, AngleSpan = 360, StartAngle = 0, InsideLabelFormat = "{1}: {2:0} %", OutsideLabelFormat = "", FontSize = 20 };
-
+            IFactory factory = new ConcreteFactory();
+            var seriesP1 = factory.CreatePieSeriesBasic();
             Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartColor();
             foreach (KeyValuePair<string, int> item in fdBrand)
             {
@@ -103,4 +103,3 @@ namespace App1.Droid
         }
     }
 }
-

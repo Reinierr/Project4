@@ -128,6 +128,6 @@ D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\android\asset
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\android\assets\System.Runtime.Serialization.dll.mdb
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
-D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
 C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
-C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb
+D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
+D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb
