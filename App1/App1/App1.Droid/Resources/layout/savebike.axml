@@ -78,7 +78,7 @@
             android:inputType="textMultiLine"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-						android:visibility="invisible"
+            android:visibility="invisible"
             android:id="@+id/editText2"
             android:layout_marginTop="124.5dp"
             android:text="Op locatie:"

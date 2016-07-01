@@ -63,7 +63,6 @@ C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\obj\Debug\res\drawa
 C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\obj\Debug\res\layout\emptylayout.xml
 C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\obj\Debug\res\layout\tablayout2.xml
 C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\obj\Debug\res\layout\barchartedit.xml
-C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\App1.Droid.csprojResolveAssemblyReference.cache
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\App1.Droid.pdb
@@ -130,4 +129,5 @@ D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\android\asset
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
-D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb
+C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
+C:\Users\Reinier\Source\Repos\Project43\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb

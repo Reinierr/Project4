@@ -3,6 +3,8 @@
   <!--	<uses-sdk android:minSdkVersion="15" /> -->
   <uses-permission android:name="android.permission.READ_CALENDAR" />
   <uses-permission android:name="android.permission.WRITE_CALENDAR" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:label="App1.Droid" android:name="md50170a25da682dd459b9251c65ebe3a7a.preLoad" android:allowBackup="true" android:icon="@drawable/barcharticon" android:debuggable="true">

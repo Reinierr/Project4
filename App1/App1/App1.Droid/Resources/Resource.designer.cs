@@ -111,17 +111,17 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050006
 			public const int lineChart = 2131034118;
 			
-			// aapt resource value: 0x7f050015
-			public const int linearLayout1 = 2131034133;
-			
-			// aapt resource value: 0x7f050016
-			public const int linearLayout2 = 2131034134;
-			
 			// aapt resource value: 0x7f050017
-			public const int linearLayout3 = 2131034135;
+			public const int linearLayout1 = 2131034135;
 			
 			// aapt resource value: 0x7f050018
-			public const int linearLayout4 = 2131034136;
+			public const int linearLayout2 = 2131034136;
+			
+			// aapt resource value: 0x7f050019
+			public const int linearLayout3 = 2131034137;
+			
+			// aapt resource value: 0x7f05001a
+			public const int linearLayout4 = 2131034138;
 			
 			// aapt resource value: 0x7f050007
 			public const int myButton = 2131034119;
@@ -138,8 +138,8 @@ namespace App1.Droid
 			// aapt resource value: 0x7f05000c
 			public const int surfaceView1 = 2131034124;
 			
-			// aapt resource value: 0x7f050014
-			public const int tabHost1 = 2131034132;
+			// aapt resource value: 0x7f050016
+			public const int tabHost1 = 2131034134;
 			
 			// aapt resource value: 0x7f050010
 			public const int textView1 = 2131034128;
@@ -149,6 +149,12 @@ namespace App1.Droid
 			
 			// aapt resource value: 0x7f05000b
 			public const int timePicker1 = 2131034123;
+			
+			// aapt resource value: 0x7f050014
+			public const int writeNote = 2131034132;
+			
+			// aapt resource value: 0x7f050015
+			public const int writeResponse = 2131034133;
 			
 			static Id()
 			{
