@@ -6,6 +6,10 @@ using System.Linq;
 
 namespace App1
 {
+  /* ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
+  // Establish connection to the CSV.
+  // CsvConnection is called in init.cs
+  /* ~-~-~-~-~-~-~-~-~-~-~-~-~-~-~-~ */
   public class CSVConnection
   {
     private TextReader connection;
@@ -35,6 +39,7 @@ namespace App1
     /// Chart filler data
     /// </summary>
     /// <returns></returns>
+    //Query to fill linechart
     public Dictionary<int, int> getLinechart()
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
@@ -51,7 +56,7 @@ namespace App1
       }
       return result;
     }
-
+    //Query to get buurt from string
     public string getBuurt(string action)
     {
       string buurt = "";
@@ -59,15 +64,22 @@ namespace App1
         .Where(diefstal => diefstal.Buurt.Contains(action.ToUpper()))
         .GroupBy(diefstal => diefstal.Buurt)
         .Select(group => new { Buurt = group.Key }))
+      {
+        if (line.Buurt.Length == (action.Length + 3))
         {
-          if(line.Buurt.Length == (action.Length + 3))
-          {
-            buurt = line.Buurt;
-          }
+          buurt = line.Buurt;
         }
+      }
       return buurt;
     }
+    //Query to get list for dropdown menu
+    public Dictionary<int, string> getBuurten()
+    {
+      Dictionary<int, string> result = new Dictionary<int, string>();
 
+      return result;
+    }
+    //Query to fill the barchart
     public Dictionary<string, int> getBarchart()
     {
       Dictionary<string, int> result = new Dictionary<string, int>();
@@ -86,6 +98,7 @@ namespace App1
       }
       return result;
     }
+    //Query to get a grouped barchart part
     public Dictionary<int, int> getBarchartGroupFD(string buurt)
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
@@ -103,7 +116,7 @@ namespace App1
       }
       return result;
     }
-
+    //Query to get a grouped barchart part
     public Dictionary<int, int> getBarchartGroupFT(string buurt)
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
@@ -121,7 +134,7 @@ namespace App1
       }
       return result;
     }
-
+    //Query to get 5 highest bike brands
     public Dictionary<string, int> getPiechartBrand()
     {
       Dictionary<string, int> result = new Dictionary<string, int>();
@@ -140,25 +153,26 @@ namespace App1
       }
       return result;
     }
-        public Dictionary<string, int> getPiechartBrandFull()
+    //Query to get full list of bike brands
+    public Dictionary<string, int> getPiechartBrandFull()
+    {
+      Dictionary<string, int> result = new Dictionary<string, int>();
+      foreach (var line in fietsdiefstallen
+        .Where(x => x.typef == "FIETS")
+        .GroupBy(fiets => new { fiets.merk })
+        .Select(group => new
         {
-            Dictionary<string, int> result = new Dictionary<string, int>();
-            foreach (var line in fietsdiefstallen
-              .Where(x => x.typef == "FIETS")
-              .GroupBy(fiets => new { fiets.merk })
-              .Select(group => new
-              {
-                  Brand = group.Key.merk,
-                  Count = group.Count()
-              })
-              .OrderByDescending(x => x.Count))
-            {
-                result[line.Brand] = line.Count;
-            }
-            return result;
-        }
-
-        public Dictionary<string, int> getPiechartColor()
+          Brand = group.Key.merk,
+          Count = group.Count()
+        })
+        .OrderByDescending(x => x.Count))
+      {
+        result[line.Brand] = line.Count;
+      }
+      return result;
+    }
+    //Query to get the 5 highest bike colors
+    public Dictionary<string, int> getPiechartColor()
     {
       Dictionary<string, int> result = new Dictionary<string, int>();
       foreach (var line in fietsdiefstallen
@@ -170,28 +184,29 @@ namespace App1
         })
         .OrderByDescending(x => x.Count)
         .Take(5))
-            {
-                result[line.Color] = line.Count;
-            }
-            return result;
-        }
-        public Dictionary<string, int> getPiechartColorFull()
-        {
-            Dictionary<string, int> result = new Dictionary<string, int>();
-            foreach (var line in fietsdiefstallen
-              .GroupBy(fiets => new { fiets.kleur })
-              .Select(group => new
-              {
-                  Color = group.Key.kleur,
-                  Count = group.Count()
-              })
-              .OrderByDescending(x => x.Count))
-              {
-                result[line.Color] = line.Count;
-            }
-            return result;
-        }
+      {
+        result[line.Color] = line.Count;
+      }
+      return result;
     }
+    //Query to get the full list of bike colors
+    public Dictionary<string, int> getPiechartColorFull()
+    {
+      Dictionary<string, int> result = new Dictionary<string, int>();
+      foreach (var line in fietsdiefstallen
+        .GroupBy(fiets => new { fiets.kleur })
+        .Select(group => new
+        {
+          Color = group.Key.kleur,
+          Count = group.Count()
+        })
+        .OrderByDescending(x => x.Count))
+      {
+        result[line.Color] = line.Count;
+      }
+      return result;
+    }
+  }
 
   public class FietsDiefstal
   {
