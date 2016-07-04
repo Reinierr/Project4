@@ -59,17 +59,22 @@ namespace WindowsFormsApplication1 {
 				if (chart.Series[Series].ChartType == SeriesChartType.Pie) {
 					if (i != items) {
 						DataPoint dataPoint = new DataPoint();
+						string var;
 						if (a.Key.ToString() == "") {
 							dataPoint.LegendText = "Unknown";
 							dataPoint.ToolTip = "Unknown";
+							dataPoint.Name = "Unknown";
 						}
 						else {
-							dataPoint.LegendText = a.Key.ToString().First().ToString().ToUpper() + a.Key.ToString().ToLower().Substring(1);
+							dataPoint.Name = a.Key.ToString();
+							dataPoint.LegendText = a.Key.ToString().First().ToString().ToUpper() + a.Key.ToString().ToLower().Substring(1) + " - " + a.Value.ToString() + " bikes";
 							dataPoint.ToolTip = a.Key.ToString().First().ToString().ToUpper() + a.Key.ToString().ToLower().Substring(1);
 						}
+						
 						dataPoint.XValue = 0;
 						dataPoint.YValues = new double[] { a.Value };
 						chart.Series[Series].Points.Add(dataPoint);
+
 						i++;
 					}
 					
@@ -103,11 +108,12 @@ namespace WindowsFormsApplication1 {
 			addToChart(chart1, "Vreewijk", csvFD.getBarchartGroupFD("80 VREEWIJK"));
 			var a = csvFD.getBarchartGroupFD("71 TARWEWIJK");
 			addToChart(chart1, "Tarwewijk", csvFD.getBarchartGroupFD("71 TARWEWIJK"));
-			chart1.ChartAreas["Default"].AxisX.Maximum = 13;
+			
 
 			bikeTheftsToolStripMenuItem.Enabled = false;
 			byColorToolStripMenuItem.Enabled = true;
 			byBrandToolStripMenuItem.Enabled = true;
+			bikeTheftsToolStripMenuItem1.Enabled = true;
 		}
 
 		private void byColorToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -119,6 +125,7 @@ namespace WindowsFormsApplication1 {
 			byColorToolStripMenuItem.Enabled = false;
 			bikeTheftsToolStripMenuItem.Enabled = true;
 			byBrandToolStripMenuItem.Enabled = true;
+			bikeTheftsToolStripMenuItem1.Enabled = true;
 		}
 
 		private void byBrandToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -130,6 +137,24 @@ namespace WindowsFormsApplication1 {
 			byColorToolStripMenuItem.Enabled = true;
 			bikeTheftsToolStripMenuItem.Enabled = true;
 			byBrandToolStripMenuItem.Enabled = false;
+			bikeTheftsToolStripMenuItem1.Enabled = true;
+		}
+
+		private void bikeTheftsToolStripMenuItem1_Click(object sender, EventArgs e) {
+			chart1.Series.Clear();
+			createSeries(chart1, new string[] { "Stolen bikes", "Centrum" }, SeriesChartType.Line);
+			chart1.Titles["Title1"].Text = "Bike thefts in Rijnmond region per month";
+			addToChart(chart1, "Stolen bikes", csvFD.getLinechart());
+			bikeTheftsToolStripMenuItem1.Enabled = false;
+			byColorToolStripMenuItem.Enabled = true;
+			bikeTheftsToolStripMenuItem.Enabled = true;
+			byBrandToolStripMenuItem.Enabled = true;
+			changeAxisTitle(chart1, "months", "bikes stolen");
+		}
+
+		private void aboutToolStripMenuItem_Click(object sender, EventArgs e) {
+			Form2 form = new Form2();
+			form.Show();
 		}
 	}
 	
