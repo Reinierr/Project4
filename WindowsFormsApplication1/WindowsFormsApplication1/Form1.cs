@@ -64,8 +64,8 @@ namespace WindowsFormsApplication1 {
 							dataPoint.ToolTip = "Unknown";
 						}
 						else {
-							dataPoint.LegendText = a.Key.ToString();
-							dataPoint.ToolTip = a.Key.ToString();
+							dataPoint.LegendText = a.Key.ToString().First().ToString().ToUpper() + a.Key.ToString().ToLower().Substring(1);
+							dataPoint.ToolTip = a.Key.ToString().First().ToString().ToUpper() + a.Key.ToString().ToLower().Substring(1);
 						}
 						dataPoint.XValue = 0;
 						dataPoint.YValues = new double[] { a.Value };
