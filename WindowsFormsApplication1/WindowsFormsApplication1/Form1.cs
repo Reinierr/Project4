@@ -142,7 +142,7 @@ namespace WindowsFormsApplication1 {
 
 		private void bikeTheftsToolStripMenuItem1_Click(object sender, EventArgs e) {
 			chart1.Series.Clear();
-			createSeries(chart1, new string[] { "Stolen bikes", "Centrum" }, SeriesChartType.Line);
+			createSeries(chart1, new string[] { "Stolen bikes" }, SeriesChartType.Line);
 			chart1.Titles["Title1"].Text = "Bike thefts in Rijnmond region per month";
 			addToChart(chart1, "Stolen bikes", csvFD.getLinechart());
 			bikeTheftsToolStripMenuItem1.Enabled = false;
