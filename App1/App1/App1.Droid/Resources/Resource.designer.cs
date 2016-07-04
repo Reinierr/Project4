@@ -78,32 +78,32 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050008
 			public const int barchart = 2131034120;
 			
-			// aapt resource value: 0x7f050011
-			public const int button1 = 2131034129;
-			
 			// aapt resource value: 0x7f050012
-			public const int button2 = 2131034130;
+			public const int button1 = 2131034130;
 			
 			// aapt resource value: 0x7f050013
-			public const int button3 = 2131034131;
+			public const int button2 = 2131034131;
 			
-			// aapt resource value: 0x7f05000c
-			public const int cancelbutton = 2131034124;
+			// aapt resource value: 0x7f050014
+			public const int button3 = 2131034132;
 			
-			// aapt resource value: 0x7f05000e
-			public const int datePicker1 = 2131034126;
+			// aapt resource value: 0x7f05000d
+			public const int cancelbutton = 2131034125;
 			
-			// aapt resource value: 0x7f050015
-			public const int editText1 = 2131034133;
+			// aapt resource value: 0x7f05000f
+			public const int datePicker1 = 2131034127;
 			
 			// aapt resource value: 0x7f050016
-			public const int editText2 = 2131034134;
+			public const int editText1 = 2131034134;
+			
+			// aapt resource value: 0x7f050017
+			public const int editText2 = 2131034135;
 			
 			// aapt resource value: 0x7f050005
 			public const int emptylayout = 2131034117;
 			
-			// aapt resource value: 0x7f05000d
-			public const int frameLayout1 = 2131034125;
+			// aapt resource value: 0x7f05000e
+			public const int frameLayout1 = 2131034126;
 			
 			// aapt resource value: 0x7f050007
 			public const int layoutContainer = 2131034119;
@@ -117,11 +117,11 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050002
 			public const int linearLayout2 = 2131034114;
 			
-			// aapt resource value: 0x7f05001a
-			public const int linearLayout3 = 2131034138;
-			
 			// aapt resource value: 0x7f05001b
-			public const int linearLayout4 = 2131034139;
+			public const int linearLayout3 = 2131034139;
+			
+			// aapt resource value: 0x7f05001c
+			public const int linearLayout4 = 2131034140;
 			
 			// aapt resource value: 0x7f05000a
 			public const int myButton = 2131034122;
@@ -138,26 +138,29 @@ namespace App1.Droid
 			// aapt resource value: 0x7f050004
 			public const int spinner = 2131034116;
 			
-			// aapt resource value: 0x7f050010
-			public const int surfaceView1 = 2131034128;
+			// aapt resource value: 0x7f050011
+			public const int surfaceView1 = 2131034129;
 			
-			// aapt resource value: 0x7f050019
-			public const int tabHost1 = 2131034137;
+			// aapt resource value: 0x7f05001a
+			public const int tabHost1 = 2131034138;
 			
 			// aapt resource value: 0x7f050003
 			public const int textView1 = 2131034115;
 			
-			// aapt resource value: 0x7f050014
-			public const int textView2 = 2131034132;
+			// aapt resource value: 0x7f050015
+			public const int textView2 = 2131034133;
 			
-			// aapt resource value: 0x7f05000f
-			public const int timePicker1 = 2131034127;
+			// aapt resource value: 0x7f05000c
+			public const int textfile = 2131034124;
 			
-			// aapt resource value: 0x7f050017
-			public const int writeNote = 2131034135;
+			// aapt resource value: 0x7f050010
+			public const int timePicker1 = 2131034128;
 			
 			// aapt resource value: 0x7f050018
-			public const int writeResponse = 2131034136;
+			public const int writeNote = 2131034136;
+			
+			// aapt resource value: 0x7f050019
+			public const int writeResponse = 2131034137;
 			
 			static Id()
 			{
