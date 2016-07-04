@@ -108,7 +108,7 @@ namespace App1
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
       foreach (var line in fietsdiefstallen
-          .Where(diefstal => diefstal.Buurt == buurt)
+          .Where(diefstal => diefstal.District == buurt)
           .GroupBy(fiets => new { fiets.Begindatum.Month })
           .Select(group => new
           {
@@ -126,7 +126,7 @@ namespace App1
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
       foreach (var line in fietstrommels
-          .Where(diefstal => diefstal.Deelgem.ToLower() == buurt)
+          .Where(diefstal => diefstal.Deelgem.ToLower() == buurt.ToLower())
           .GroupBy(fiets => new { fiets.Mutdatum.Month })
           .Select(group => new
           {

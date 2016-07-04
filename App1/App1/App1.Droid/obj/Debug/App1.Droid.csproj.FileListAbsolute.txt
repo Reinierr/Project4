@@ -200,5 +200,10 @@ D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-hdpi\cancel2fix.png
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-hdpi\linefix.png
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-hdpi\piefix.png
+D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-mdpi\barfix.png
+D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-mdpi\biconfix.png
+D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-mdpi\cancel2fix.png
+D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-mdpi\linefix.png
+D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\res\drawable-mdpi\piefix.png
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\obj\Debug\App1.Droid.dll.mdb
 D:\Marcel\Documents\GitHub\Project4\App1\App1\App1.Droid\bin\Debug\App1.Droid.dll.mdb
