@@ -33,6 +33,19 @@ namespace App1.Droid
             tab.TabSelected += (sender, args) =>
             {
                 SetContentView(Resource.Layout.barChartEdit);
+                List<string> spinnerArray = new List<string>();
+                spinnerArray.Add("one");
+                spinnerArray.Add("two");
+                spinnerArray.Add("three");
+                spinnerArray.Add("four");
+                spinnerArray.Add("5");
+                spinnerArray.Add("six");
+                Spinner spinner = FindViewById<Spinner>(Resource.Id.spinner);
+
+                spinner.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(spinner_ItemSelected);
+                var adapter = new ArrayAdapter<string>(this, Android.Resource.Layout.SimpleSpinnerItem, spinnerArray);
+                adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+                spinner.Adapter = adapter;
             };
             ActionBar.AddTab(tab);
 
@@ -47,26 +60,33 @@ namespace App1.Droid
                 view.Model = barchart.CreatePlotModel();
             };
             ActionBar.AddTab(tab);
-            EditText buurtname = FindViewById<EditText>(Resource.Id.buurtname);
-            buurtname.KeyPress += (object sender, View.KeyEventArgs e) =>
-            {
-                if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter)
-                {
-                    this.buurt = buurtname.Text;
-                    PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
-                    CreateGroupedBarChart barchart = new CreateGroupedBarChart(buurt);
-                    view.Model = barchart.CreatePlotModel();
-                    InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
+            /*     EditText buurtname = FindViewById<EditText>(Resource.Id.buurtname);
+                 buurtname.KeyPress += (object sender, View.KeyEventArgs e) =>
+                 {
+                     if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter)
+                     {
+                         this.buurt = buurtname.Text;
+                         PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+                         CreateGroupedBarChart barchart = new CreateGroupedBarChart(buurt);
+                         view.Model = barchart.CreatePlotModel();
+                         InputMethodManager inputManager = (InputMethodManager)this.GetSystemService(Context.InputMethodService);
 
-                    inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
-                }
-                else
-                {
-                    e.Handled = false;
-                }
-            };
+                         inputManager.HideSoftInputFromWindow(this.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
+                     }
+                     else
+                     {
+                         e.Handled = false;
+                     }
+                 };*/
+
+        }
+        public void spinner_ItemSelected(object sender, AdapterView.ItemSelectedEventArgs e)
+        {
+            Spinner spinner = (Spinner)sender;
         }
     }
+
+
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Security", "CA2140:TransparentMethodsMustNotReferenceCriticalCodeFxCopRule")]
     public class CreateGroupedBarChart : IChart
     {
