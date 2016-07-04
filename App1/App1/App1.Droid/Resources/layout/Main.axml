@@ -83,11 +83,14 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
+                android:id="@+id/textfile"
+                android:layout_weight="0.9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Filler text if boss" />
             <ImageButton
                 android:src="@drawable/barcharticon"
+                android:layout_weight="0.1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/cancelbutton" />

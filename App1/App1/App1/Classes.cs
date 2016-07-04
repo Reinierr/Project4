@@ -57,26 +57,31 @@ namespace App1
       return result;
     }
     //Query to get buurt from string
-    public string getBuurt(string action)
+    public Dictionary<string, string> getBuurt(string action)
     {
-      string buurt = "";
+      Dictionary<string, string> result = new Dictionary<string, string>();
       foreach (var line in fietsdiefstallen
         .Where(diefstal => diefstal.Buurt.Contains(action.ToUpper()))
-        .GroupBy(diefstal => diefstal.Buurt)
-        .Select(group => new { Buurt = group.Key }))
+        .GroupBy(diefstal => new { diefstal.Buurt, diefstal.District })
+        .Select(group => new { Buurt = group.Key.Buurt, DistrictNr = group.Key.District  }))
       {
         if (line.Buurt.Length == (action.Length + 3))
         {
-          buurt = line.Buurt;
+          result[line.DistrictNr] = line.Buurt;
         }
       }
-      return buurt;
+      return result;
     }
     //Query to get list for dropdown menu
-    public Dictionary<int, string> getBuurten()
+    public List<string> getBuurten()
     {
-      Dictionary<int, string> result = new Dictionary<int, string>();
-
+      List<string> result = new List<string>();
+      foreach (var line in fietsdiefstallen
+        .GroupBy(diefstal => new { diefstal.Buurt })
+        .Select(group => new { Buurt = group.Key.Buurt}))
+      {
+        result.Add(line.Buurt);
+      }
       return result;
     }
     //Query to fill the barchart
@@ -211,6 +216,7 @@ namespace App1
   public class FietsDiefstal
   {
     public string Buurt { get; set; }
+    public string District { get; set; }
     public string merk { get; set; }
     public string kleur { get; set; }
     public DateTime Begindatum { get; set; }
