@@ -15,9 +15,11 @@ namespace WindowsFormsApplication1 {
 
 	public partial class Form1 : Form {
 		CSVConnection csvFD;
+		SeriesChartType status;
 		public Form1() {
 			InitializeComponent();
 			csvFD = new CSVConnection("fietsdiefstal", new StreamReader("Contents/fietsdiefstal.csv"));
+			
 		}
 
 		private void Form1_Load(object sender, EventArgs e) {
@@ -85,7 +87,7 @@ namespace WindowsFormsApplication1 {
 					
 				}
 				//Console.WriteLine(a.Value.ToString());
-			}			
+			}
 
 		//private void button2_Click(object sender, EventArgs e) {
 		//	if (comboBox1.Text != "") {
@@ -98,50 +100,63 @@ namespace WindowsFormsApplication1 {
 		//	}				
 		//}
 
+
 		private void bikeTheftsToolStripMenuItem_Click(object sender, EventArgs e) {
 			chart1.Series.Clear();
+			status = SeriesChartType.Column;
+			List<string> buurten = csvFD.getBuurten();
+			foreach (string buurt in buurten) {
+				comboBox1.Items.Add(buurt);
+			}
 
-			createSeries(chart1, new string[] { "Centrum", "Vreewijk", "Tarwewijk" }, SeriesChartType.Column);
+			//createSeries(chart1, new string[] { "Centrum", "Vreewijk", "Tarwewijk" }, SeriesChartType.Column);
 			changeAxisTitle(chart1, "months", "bikes stolen");
 			chart1.Titles["Title1"].Text = "Barchart";
-			addToChart(chart1, "Centrum", csvFD.getBarchartGroupFD("01 CENTRUM"));
-			addToChart(chart1, "Vreewijk", csvFD.getBarchartGroupFD("80 VREEWIJK"));
-			var a = csvFD.getBarchartGroupFD("71 TARWEWIJK");
-			addToChart(chart1, "Tarwewijk", csvFD.getBarchartGroupFD("71 TARWEWIJK"));
+			//addToChart(chart1, "Centrum", csvFD.getBarchartGroupFD("01 CENTRUM"));
+			//addToChart(chart1, "Vreewijk", csvFD.getBarchartGroupFD("80 VREEWIJK"));
+			//var a = csvFD.getBarchartGroupFD("71 TARWEWIJK");
+			//addToChart(chart1, "Tarwewijk", csvFD.getBarchartGroupFD("71 TARWEWIJK"));
 			
 
 			bikeTheftsToolStripMenuItem.Enabled = false;
 			byColorToolStripMenuItem.Enabled = true;
 			byBrandToolStripMenuItem.Enabled = true;
+			button2.Enabled = true;
 			bikeTheftsToolStripMenuItem1.Enabled = true;
+			bikeTheftsPerNeighborhoodToolStripMenuItem.Enabled = true;
 		}
 
 		private void byColorToolStripMenuItem_Click(object sender, EventArgs e) {
 			chart1.Series.Clear();
-
+			comboBox1.Items.Clear();
 			createSeries(chart1, new string[] { "fietsdiefstallen" }, SeriesChartType.Pie);
 			chart1.Titles["Title1"].Text = "Bike thefts by color";
 			addToChart(chart1, "fietsdiefstallen", csvFD.getPiechartColorFull());
 			byColorToolStripMenuItem.Enabled = false;
 			bikeTheftsToolStripMenuItem.Enabled = true;
 			byBrandToolStripMenuItem.Enabled = true;
+			button2.Enabled = false;
 			bikeTheftsToolStripMenuItem1.Enabled = true;
+			bikeTheftsPerNeighborhoodToolStripMenuItem.Enabled = true;
 		}
 
 		private void byBrandToolStripMenuItem_Click(object sender, EventArgs e) {
 			chart1.Series.Clear();
-
+			comboBox1.Items.Clear();
 			createSeries(chart1, new string[] { "fietsdiefstallen" }, SeriesChartType.Pie);
 			chart1.Titles["Title1"].Text = "Bike thefts by brand";
 			addToChart(chart1, "fietsdiefstallen", csvFD.getPiechartBrandFull());
 			byColorToolStripMenuItem.Enabled = true;
 			bikeTheftsToolStripMenuItem.Enabled = true;
+			button2.Enabled = false;
 			byBrandToolStripMenuItem.Enabled = false;
 			bikeTheftsToolStripMenuItem1.Enabled = true;
+			bikeTheftsPerNeighborhoodToolStripMenuItem.Enabled = true;
 		}
 
 		private void bikeTheftsToolStripMenuItem1_Click(object sender, EventArgs e) {
 			chart1.Series.Clear();
+			comboBox1.Items.Clear();
 			createSeries(chart1, new string[] { "Stolen bikes" }, SeriesChartType.Line);
 			chart1.Titles["Title1"].Text = "Bike thefts in Rijnmond region per month";
 			addToChart(chart1, "Stolen bikes", csvFD.getLinechart());
@@ -149,6 +164,8 @@ namespace WindowsFormsApplication1 {
 			byColorToolStripMenuItem.Enabled = true;
 			bikeTheftsToolStripMenuItem.Enabled = true;
 			byBrandToolStripMenuItem.Enabled = true;
+			button2.Enabled = false;
+			bikeTheftsPerNeighborhoodToolStripMenuItem.Enabled = true;
 			changeAxisTitle(chart1, "months", "bikes stolen");
 		}
 
@@ -156,6 +173,67 @@ namespace WindowsFormsApplication1 {
 			Form2 form = new Form2();
 			form.Show();
 		}
+
+		private string getQualityName(string oldname) {
+			string getname = oldname.Substring(3);
+			return oldname.Substring(0, 3) + getname.First().ToString().ToUpper() + getname.ToLower().Substring(1);
+		}
+
+		private void button2_Click(object sender, EventArgs e) {
+			string name;
+			if (comboBox1.SelectedItem != null) {
+				int count = comboBox1.SelectedItem.ToString().Count();
+				if (count >= 4) {
+					name = getQualityName(comboBox1.SelectedItem.ToString());
+				}
+				else {
+					name = comboBox1.SelectedItem.ToString();
+				}
+				Console.WriteLine(name);
+				//Console.WriteLine("'" + name + "'");
+				if (name != "") {
+
+					if (csvFD.getBarchartGroupFD(comboBox1.SelectedItem.ToString()).Count != 0) {
+						if (chart1.Series.IsUniqueName(name)) {
+							Console.WriteLine(name + "'");
+							createSeries(chart1, new string[] { name }, status);
+							addToChart(chart1, name, csvFD.getBarchartGroupFD(comboBox1.SelectedItem.ToString()));
+
+						}
+						else {
+							Console.WriteLine("A");
+							List<Series> saveSeries = new List<Series>();
+							foreach (Series serie in chart1.Series) {
+								//Console.WriteLine(serie.Name + "'" + name);
+								if (serie.Name != name) {
+									saveSeries.Add(serie);
+								}
+							}
+							chart1.Series.Clear();
+							foreach (Series serie in saveSeries) {
+								chart1.Series.Add(serie);
+							}
+						}
+					}
+				}
+			}		
+		}
+
+		private void bikeTheftsPerNeighborhoodToolStripMenuItem_Click(object sender, EventArgs e) {
+			chart1.Series.Clear();
+			status = SeriesChartType.Line;
+			List<string> buurten = csvFD.getBuurten();
+			foreach (string buurt in buurten) {
+				comboBox1.Items.Add(buurt);
+			}
+			button2.Enabled = true;
+			bikeTheftsPerNeighborhoodToolStripMenuItem.Enabled = false;
+			
+			bikeTheftsToolStripMenuItem1.Enabled = true;
+			byColorToolStripMenuItem.Enabled = true;
+			bikeTheftsToolStripMenuItem.Enabled = true;
+			byBrandToolStripMenuItem.Enabled = true;
+
+		}
 	}
-	
 }

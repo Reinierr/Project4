@@ -31,11 +31,30 @@ namespace WindowsFormsApplication1
       }
     }
 
-    /// <summary>
-    /// Chart filler data
-    /// </summary>
-    /// <returns></returns>
-    public Dictionary<int, int> getLinechart()
+		public List<string> getBuurten() {
+			List<string> result = new List<string>();
+			foreach (var line in fietsdiefstallen
+				.GroupBy(diefstal => new { diefstal.Buurt})
+				.Select(group => new { Buurt = group.Key.Buurt})) {
+				result.Add(line.Buurt);
+			}
+			return result;
+		}
+
+		public List<string> getBuurtenPlus() {
+			List<string> result = new List<string>();
+			foreach (var line in fietsdiefstallen
+				.GroupBy(diefstal => new { diefstal.Buurt, diefstal.Plaats })
+				.Select(group => new { Buurt = group.Key.Buurt, Plaats = group.Key.Plaats})) {
+				result.Add(line.Buurt + " - " + line.Plaats);
+			}
+			return result;
+		}
+		/// <summary>
+		/// Chart filler data
+		/// </summary>
+		/// <returns></returns>
+		public Dictionary<int, int> getLinechart()
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
       foreach (var line in fietsdiefstallen
@@ -68,7 +87,7 @@ namespace WindowsFormsApplication1
       return buurt;
     }
 
-    public Dictionary<string, int> getBarchart()
+		public Dictionary<string, int> getBarchart()
     {
       Dictionary<string, int> result = new Dictionary<string, int>();
       foreach (var line in fietstrommels
@@ -196,6 +215,7 @@ namespace WindowsFormsApplication1
   public class FietsDiefstal
   {
     public string Buurt { get; set; }
+		public string Plaats { get; set; }
     public string merk { get; set; }
     public string kleur { get; set; }
     public DateTime Begindatum { get; set; }
