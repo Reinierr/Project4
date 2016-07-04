@@ -29,7 +29,7 @@ namespace App1.Droid
       ActionBar.SetDisplayShowTitleEnabled(false);
       ActionBar.Tab tab = ActionBar.NewTab();
       tab.SetText("Group Bar Chart");
-      tab.SetIcon(Resource.Drawable.barcharticon);
+      tab.SetIcon(Resource.Drawable.barfix);
       tab.TabSelected += (sender, args) =>
       {
         SetContentView(Resource.Layout.barChartEdit);
@@ -61,7 +61,7 @@ namespace App1.Droid
 
       tab = ActionBar.NewTab();
       tab.SetText("Single Bar Chart");
-      tab.SetIcon(Resource.Drawable.barcharticon);
+      tab.SetIcon(Resource.Drawable.barfix);
       tab.TabSelected += (sender, args) =>
       {
         SetContentView(Resource.Layout.barChart);

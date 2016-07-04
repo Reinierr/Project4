@@ -100,7 +100,7 @@ namespace App1.Droid
       ActionBar.SetDisplayShowTitleEnabled(false);
       ActionBar.Tab tab = ActionBar.NewTab();
       tab.SetText("Calendar");
-      tab.SetIcon(Resource.Drawable.Icon);
+      tab.SetIcon(Resource.Drawable.biconfix);
       tab.TabSelected += (sender, args) =>
       {
         SetContentView(Resource.Layout.savebike);
@@ -187,7 +187,7 @@ namespace App1.Droid
 
       tab = ActionBar.NewTab();
       tab.SetText("Memo");
-      tab.SetIcon(Resource.Drawable.Icon);
+      tab.SetIcon(Resource.Drawable.biconfix);
       tab.TabSelected += (sender, args) =>
       {
         SetContentView(Resource.Layout.savebike2);
