@@ -54,9 +54,8 @@ namespace WindowsFormsApplication1 {
 		}
 
 		private void addToChart<t>(Chart chart, string Series, Dictionary<t, int> yValue) {
-			Console.WriteLine("AAAAAAAAA");
 			int i = 0;
-			int items = 10;
+			int items = 7;
 			foreach (KeyValuePair<t, int> a in yValue) {
 				if (chart.Series[Series].ChartType == SeriesChartType.Pie) {
 					if (i != items) {
@@ -89,6 +88,39 @@ namespace WindowsFormsApplication1 {
 				//Console.WriteLine(a.Value.ToString());
 			}
 
+		private void addToChart_CustomColors(Chart chart, string Series, Dictionary<string, int> yValue) {
+			int i = 0;
+			int items = 8;
+			Console.WriteLine("Dank Maymes");
+			foreach (KeyValuePair<string, int> a in yValue) {
+
+				if (i != items) {
+					DataPoint dataPoint = new DataPoint();
+					string var;
+					if (a.Key.ToString() == "") {
+						dataPoint.LegendText = "Unknown";
+						dataPoint.ToolTip = "Unknown";
+						dataPoint.Name = "Unknown";
+					}
+					else {
+						dataPoint.Name = a.Key.ToString();
+						dataPoint.LegendText = a.Key.ToString().First().ToString().ToUpper() + a.Key.ToString().ToLower().Substring(1) + " - " + a.Value.ToString() + " bikes";
+						dataPoint.ToolTip = a.Key.ToString().First().ToString().ToUpper() + a.Key.ToString().ToLower().Substring(1);
+						Console.WriteLine(a.Key.ToString());
+						if (getColor(a.Key.ToString()) != Color.Empty) {
+							dataPoint.Color = getColor(a.Key.ToString());
+						}						
+					}
+
+					dataPoint.XValue = 0;
+					dataPoint.YValues = new double[] { a.Value };
+					chart.Series[Series].Points.Add(dataPoint);
+
+					i++;
+				}
+			}
+		}
+
 		//private void button2_Click(object sender, EventArgs e) {
 		//	if (comboBox1.Text != "") {
 		//		if (csvFD.getBarchartGroupFD(comboBox1.Text).Count != 0) {
@@ -99,6 +131,41 @@ namespace WindowsFormsApplication1 {
 		//		}
 		//	}				
 		//}
+		private Color getColor(string dC) {
+			if (dC == "ZWART") {
+				return Color.Black;
+			}
+			else if (dC == "BLAUW") {
+				return Color.DarkBlue;
+			}
+			else if (dC == "ONBEKEND") {
+				return Color.Empty;
+			}
+			else if (dC == "GRIJS") {
+				return Color.Gray;
+			}
+			else if (dC == "ZILVERKLEURIG") {
+				return Color.Silver;
+			}
+			else if (dC == "MEERKLEURIG") {
+				return Color.Yellow;
+			}
+			else if (dC == "WIT") {
+				return Color.AntiqueWhite;
+			}
+			else if (dC == "GROEN") {
+				return Color.Green;
+			}
+			else if (dC == "ROOD") {
+				return Color.Red;
+			}
+			else if (dC == "PAARS") {
+				return Color.Purple;
+			}
+			else {
+				return Color.Empty;
+			}
+		}
 
 
 		private void bikeTheftsToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -131,7 +198,7 @@ namespace WindowsFormsApplication1 {
 			comboBox1.Items.Clear();
 			createSeries(chart1, new string[] { "fietsdiefstallen" }, SeriesChartType.Pie);
 			chart1.Titles["Title1"].Text = "Bike thefts by color";
-			addToChart(chart1, "fietsdiefstallen", csvFD.getPiechartColorFull());
+			addToChart_CustomColors(chart1, "fietsdiefstallen", csvFD.getPiechartColorFull());
 			byColorToolStripMenuItem.Enabled = false;
 			bikeTheftsToolStripMenuItem.Enabled = true;
 			byBrandToolStripMenuItem.Enabled = true;
