@@ -28,7 +28,7 @@ namespace App1.Droid
       ActionBar.SetDisplayShowTitleEnabled(false);
       ActionBar.Tab tab = ActionBar.NewTab();
       tab.SetText("PieChart Stolen Brands");
-      tab.SetIcon(Resource.Drawable.Icon);
+      tab.SetIcon(Resource.Drawable.piefix);
       tab.TabSelected += (sender, args) =>
       {
         SetContentView(Resource.Layout.barChart);
@@ -41,7 +41,7 @@ namespace App1.Droid
 
       tab = ActionBar.NewTab();
       tab.SetText("Favorite Stolen Bike Colors");
-      tab.SetIcon(Resource.Drawable.Icon);
+      tab.SetIcon(Resource.Drawable.piefix);
       tab.TabSelected += (sender, args) =>
       {
         SetContentView(Resource.Layout.barChart);

@@ -30,7 +30,7 @@
                         android:src="@drawable/barchart3"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#FFFF8D"
+                        android:background="@null"
                         android:layout_marginBottom="5dp"
                         android:id="@+id/barchart" />
                     <ImageButton
@@ -38,7 +38,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:id="@+id/lineChart"
-                        android:background="#84FFFF" />
+                        android:background="@null" />
                 </LinearLayout>
             <!-- 48% Width End-->
             </RelativeLayout>
@@ -60,14 +60,14 @@
                         android:src="@drawable/savebike3"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#FF8A80"
+                        android:background="@null"
                         android:layout_marginBottom="5dp"
                         android:id="@+id/myButton" />
                     <ImageButton
                         android:src="@drawable/piechart3"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:background="#B9F6CA"
+                        android:background="@null"
                         android:id="@+id/pieChart" />
                 </LinearLayout>
             <!-- 48% Width End-->
@@ -89,7 +89,7 @@
                 android:layout_height="wrap_content"
                 android:text="Filler text if boss" />
             <ImageButton
-                android:src="@drawable/barcharticon"
+                android:src="@drawable/cancel2fix"
                 android:layout_weight="0.1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

@@ -19,14 +19,24 @@ namespace App1.Droid
   [Activity(Label = "linechart", Icon = "@drawable/icon")]
   public class linechart : Activity
   {
-    protected override void OnCreate(Bundle savedInstanceState)
-    {
-      base.OnCreate(savedInstanceState);
-      SetContentView(Resource.Layout.barChart);
-      PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
-      CreateLineChart linechart = new CreateLineChart();
-      view.Model = linechart.CreatePlotModel();
-    }
+        protected override void OnCreate(Bundle savedInstanceState)
+        {
+            base.OnCreate(savedInstanceState);
+            SetContentView(Resource.Layout.tablayout);
+            ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
+            ActionBar.SetDisplayShowTitleEnabled(false);
+            ActionBar.Tab tab = ActionBar.NewTab();
+            tab.SetText("LineChart");
+            tab.SetIcon(Resource.Drawable.linefix);
+            tab.TabSelected += (sender, args) =>
+          {
+              SetContentView(Resource.Layout.barChart);
+              PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
+              CreateLineChart linechart = new CreateLineChart();
+              view.Model = linechart.CreatePlotModel();
+          };
+            ActionBar.AddTab(tab);
+        }
   }
   // IChart implements CreatePlotModel() which creates the graph
   //This will implement a linechart
