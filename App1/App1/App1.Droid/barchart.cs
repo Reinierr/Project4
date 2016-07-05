@@ -199,10 +199,10 @@ namespace App1.Droid
       };
       
       IFactory factory = new ConcreteFactory();
-      var s1 = factory.CreateColumnSeriesBasic("FietsDiefstal");
-      var s2 = factory.CreateColumnSeriesBasic("FietsTrommels");
+      var s1 = factory.CreateColumnSeriesBasic("Bike Thefts");
+      var s2 = factory.CreateColumnSeriesBasic("Bike Storage Units");
       var categoryAxis = factory.CreateCategoryAxisMonths();
-      var valueAxis = factory.CreateLinearAxisBasic("Totaal Aantal");
+      var valueAxis = factory.CreateLinearAxisBasic("Total amount");
       
       Dictionary<int, int> fs = preLoad.csvFD.getBarchartGroupFD(buurt);
       foreach (KeyValuePair<int, int> item in fs)
@@ -231,7 +231,7 @@ namespace App1.Droid
     {
       var model = new PlotModel
       {
-        Title = "Top 5 wijken",
+        Title = "Top 5 Neighborhood",
         LegendPlacement = LegendPlacement.Outside,
         LegendPosition = LegendPosition.BottomCenter,
         LegendOrientation = LegendOrientation.Horizontal,
@@ -239,9 +239,9 @@ namespace App1.Droid
 
       };
       IFactory factory = new ConcreteFactory();
-      var s1 = factory.CreateColumnSeriesBasic("FietsTrommels");
-      var categoryAxis = factory.CreateCategoryAxisBasic("FietsTrommels");
-      var valueAxis = factory.CreateLinearAxisBasic("Totaal Aantal");
+      var s1 = factory.CreateColumnSeriesBasic("Bike Storage Unit");
+      var categoryAxis = factory.CreateCategoryAxisBasic("Neighborhoods");
+      var valueAxis = factory.CreateLinearAxisBasic("Total Amount");
 
       Dictionary<string, int> fs = preLoad.csvFT.getBarchart();
       foreach (KeyValuePair<string, int> item in fs)

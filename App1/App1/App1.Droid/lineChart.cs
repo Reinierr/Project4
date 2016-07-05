@@ -45,7 +45,7 @@ namespace App1.Droid
   {
     public PlotModel CreatePlotModel()
     {
-      string title = "fietsdiefstallen per maand";
+      string title = "Bike thefts a month";
       var plotModel = new PlotModel
       {
         Title = title,
@@ -58,7 +58,7 @@ namespace App1.Droid
 
       };
       IFactory factory = new ConcreteFactory();
-      var linearAxis = factory.CreateLinearAxisBasic("Diefstal Totaal");
+      var linearAxis = factory.CreateLinearAxisBasic("Total amount");
       var categoryAxis = factory.CreateCategoryAxisMonths();
 
       var series1 = new LineSeries
@@ -66,7 +66,7 @@ namespace App1.Droid
         MarkerType = MarkerType.Circle,
         MarkerSize = 4,
         MarkerStroke = OxyColors.White,
-        Title = "totaal"
+        Title = "total"
       };
 
       Dictionary<int, int> fd = preLoad.csvFD.getLinechart();
