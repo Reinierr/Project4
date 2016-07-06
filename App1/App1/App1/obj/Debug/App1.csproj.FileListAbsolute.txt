@@ -56,33 +56,20 @@ C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll
 C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.pdb
 C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
 C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\obj\Debug\App1.dll.mdb
-C:\Users\Reinier\Source\Repos\Project46\App1\App1\App1\bin\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\App1.dll
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\App1.pdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\CsvHelper.dll
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\CsvHelper.pdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\CsvHelper.xml
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\obj\Debug\App1.dll
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\obj\Debug\App1.pdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\obj\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\obj\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\obj\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\obj\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\obj\Debug\App1.dll.mdb
+C:\Users\Oguzhan\Documents\Visual Studio 2015\Projects\PROJ\App1\App1\App1\bin\Debug\App1.dll.mdb

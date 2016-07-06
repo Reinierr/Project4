@@ -12,6 +12,7 @@
   <uses-permission android:name="android.permission.ACCES_NETWORK_STATE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <application android:label="App1.Droid" android:name="md50170a25da682dd459b9251c65ebe3a7a.preLoad" android:allowBackup="true" android:icon="@drawable/barcharticon" android:debuggable="true">
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/google_maps_key" />
@@ -25,6 +26,7 @@
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
+    <activity android:label="map" android:name="md50170a25da682dd459b9251c65ebe3a7a.map" />
     <activity android:icon="@drawable/icon" android:label="piechart" android:name="md50170a25da682dd459b9251c65ebe3a7a.piechart" />
     <activity android:label="pielist" android:name="md50170a25da682dd459b9251c65ebe3a7a.pielist" />
     <activity android:icon="@drawable/icon" android:label="savebike" android:name="md50170a25da682dd459b9251c65ebe3a7a.savebike" />
