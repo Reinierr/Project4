@@ -62,13 +62,9 @@ namespace App1
       Dictionary<string, string> result = new Dictionary<string, string>();
       foreach (var line in fietsdiefstallen
         .Where(diefstal => diefstal.Buurt.Contains(action.ToUpper()))
-        .GroupBy(diefstal => new { diefstal.Buurt, diefstal.District })
-        .Select(group => new { Buurt = group.Key.Buurt, DistrictNr = group.Key.District  }))
+        .Select(diefstal => new { Buurt = diefstal.Buurt, District = diefstal.District }))
       {
-        if (line.Buurt.Length == (action.Length + 3))
-        {
-          result[line.DistrictNr] = line.Buurt;
-        }
+        result[line.District] = line.Buurt;
       }
       return result;
     }
@@ -78,7 +74,7 @@ namespace App1
       List<string> result = new List<string>();
       foreach (var line in fietsdiefstallen
         .GroupBy(diefstal => new { diefstal.Buurt })
-        .Select(group => new { Buurt = group.Key.Buurt}))
+        .Select(group => new { Buurt = group.Key.Buurt }))
       {
         result.Add(line.Buurt);
       }
@@ -130,7 +126,7 @@ namespace App1
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
       foreach (var line in fietsdiefstallen
-          .Where(diefstal => diefstal.District == buurt)
+          .Where(diefstal => diefstal.Buurt.EndsWith(buurt))
           .GroupBy(fiets => new { fiets.Begindatum.Month })
           .Select(group => new
           {
@@ -148,7 +144,7 @@ namespace App1
     {
       Dictionary<int, int> result = new Dictionary<int, int>();
       foreach (var line in fietstrommels
-          .Where(diefstal => diefstal.Deelgem.ToLower() == buurt.ToLower())
+          .Where(diefstal => diefstal.Deelgem.ToLower().Contains(buurt.ToLower()))
           .GroupBy(fiets => new { fiets.Mutdatum.Month })
           .Select(group => new
           {
