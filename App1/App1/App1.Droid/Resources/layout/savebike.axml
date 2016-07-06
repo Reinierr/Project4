@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000">
+    <FrameLayout
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/frameLayout1">
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker1" />
+        <TimePicker
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/timePicker1" />
+        <SurfaceView
+            android:background="#000"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/surfaceView1"
+            android:layout_marginTop="370.0dp" />
+        <Button
+            android:text="Apply Date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button1"
+            android:layout_marginTop="371.0dp" />
+        <Button
+            android:text="Apply Time"
+            android:enabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button2"
+            android:layout_marginTop="416.0dp"
+            android:layout_marginBottom="0.0dp" />
+        <Button
+            android:text="Continue"
+            android:enabled="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button3"
+            android:layout_marginTop="463.0dp"
+            android:layout_marginBottom="0.0dp" />
+        <TextView
+            android:text="Title:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/textView1"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginTop="15.5dp" />
+        <TextView
+            android:text="Description:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/textView2"
+            android:layout_marginLeft="15.0dp"
+            android:layout_marginTop="95.5dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText1"
+            android:visibility="invisible"
+            android:layout_marginTop="42.0dp"
+            android:singleLine="true"
+            android:text="Fiets Ophalen"
+            android:maxLength="50" />
+        <EditText
+            android:inputType="textMultiLine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="invisible"
+            android:id="@+id/editText2"
+            android:layout_marginTop="124.5dp"
+            android:text="Op locatie:"
+            android:maxLength="200" />
+    </FrameLayout>
+</LinearLayout>
