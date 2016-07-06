@@ -14,12 +14,12 @@ namespace WindowsFormsApplication1 {
 	
 
 	public partial class Form1 : Form {
-		CSVConnection csvFD;
+		CSVConnection csvFD, csvFT;
 		SeriesChartType status;
 		public Form1() {
 			InitializeComponent();
 			csvFD = new CSVConnection("fietsdiefstal", new StreamReader("Contents/fietsdiefstal.csv"));
-			
+			csvFT = new CSVConnection("fietstrommel", new StreamReader("Contents/fietstrommels.csv"));
 		}
 
 		private void Form1_Load(object sender, EventArgs e) {
@@ -178,7 +178,7 @@ namespace WindowsFormsApplication1 {
 
 			//createSeries(chart1, new string[] { "Centrum", "Vreewijk", "Tarwewijk" }, SeriesChartType.Column);
 			changeAxisTitle(chart1, "months", "bikes stolen");
-			chart1.Titles["Title1"].Text = "Barchart";
+			chart1.Titles["Title1"].Text = "Bike thefts in certain neigborhoods per month";
 			//addToChart(chart1, "Centrum", csvFD.getBarchartGroupFD("01 CENTRUM"));
 			//addToChart(chart1, "Vreewijk", csvFD.getBarchartGroupFD("80 VREEWIJK"));
 			//var a = csvFD.getBarchartGroupFD("71 TARWEWIJK");
@@ -293,7 +293,10 @@ namespace WindowsFormsApplication1 {
 			foreach (string buurt in buurten) {
 				comboBox1.Items.Add(buurt);
 			}
+
 			button2.Enabled = true;
+			chart1.Titles["Title1"].Text = "Bike thefts in certain neigborhoods per month";
+			changeAxisTitle(chart1, "months", "bikes stolen");
 			bikeTheftsPerNeighborhoodToolStripMenuItem.Enabled = false;
 			
 			bikeTheftsToolStripMenuItem1.Enabled = true;
