@@ -103,6 +103,28 @@ namespace App1
       }
       return result;
     }
+    //Query to create markers
+    public List<FietsTrommel> getMarkers()
+    {
+      List<FietsTrommel> result = new List<FietsTrommel>();
+      foreach (var line in fietstrommels
+          .Select(fietst => new
+          {
+            ycoord = fietst.ycoord,
+            xcoord = fietst.xcoord,
+            straat = fietst.Straat,
+            datum = fietst.Mutdatum
+          }))
+      {
+        FietsTrommel ft = new FietsTrommel();
+        ft.xcoord = line.xcoord;
+        ft.ycoord = line.ycoord;
+        ft.Straat = line.straat;
+        ft.Mutdatum = line.datum;
+        result.Add(ft);
+      }
+      return result;
+    }
     //Query to get a grouped barchart part
     public Dictionary<int, int> getBarchartGroupFD(string buurt)
     {

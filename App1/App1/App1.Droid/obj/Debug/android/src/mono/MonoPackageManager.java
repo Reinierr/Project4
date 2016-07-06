@@ -106,7 +106,6 @@ class MonoPackageManager_Resources {
 		"Xamarin.Android.Support.v4.dll",
 		"Xamarin.GooglePlayServices.Base.dll",
 		"Xamarin.GooglePlayServices.Basement.dll",
-		"Xamarin.GooglePlayServices.Location.dll",
 		"Xamarin.GooglePlayServices.Maps.dll",
 		"System.Runtime.dll",
 		"System.Diagnostics.Debug.dll",

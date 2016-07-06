@@ -91,6 +91,7 @@
     <Compile Include="Factory.cs" />
     <Compile Include="gmaps.cs" />
     <Compile Include="init.cs" />
+    <Compile Include="Iterator.cs" />
     <Compile Include="linechart.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="piechart.cs" />
