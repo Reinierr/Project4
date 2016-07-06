@@ -1,1 +1,1 @@
-<resources><string name="hello">Hello World, Click Me!</string><string name="app_name">App1.Droid</string><string name="neighborhood_prompt">Select a Neighborhood</string></resources>
+<resources><string name="hello">Hello World, Click Me!</string><string name="app_name">App1.Droid</string><string name="neighborhood_prompt">Select a Neighborhood</string><string name="google_maps_key">AIzaSyB-xCAnpRKva004lN-9a6Vz1GczEp86jgs</string></resources>

@@ -88,6 +88,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Filler text if boss" />
+            <Button
+                android:text="Maps"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/gmaps" />
             <ImageButton
                 android:src="@drawable/cancel2fix"
                 android:layout_weight="0.1"
