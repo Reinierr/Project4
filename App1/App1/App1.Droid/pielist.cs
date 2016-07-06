@@ -24,7 +24,7 @@ namespace App1.Droid
       ActionBar.NavigationMode = ActionBarNavigationMode.Tabs;
       ActionBar.SetDisplayShowTitleEnabled(false);
       ActionBar.Tab tab = ActionBar.NewTab();
-      tab.SetText("stolen bike brands");
+      tab.SetText("Stolen Bike Brands");
       tab.SetIcon(Resource.Drawable.Icon);
       tab.TabSelected += (sender, args) =>
       {
@@ -59,7 +59,7 @@ namespace App1.Droid
       Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartBrandFull();
       foreach (KeyValuePair<string, int> item in fdBrand)
       {
-        data.Add(item.Key + " totaal van " + item.Value);
+        data.Add(item.Key + " Total of " + item.Value);
       }
       return data;
     }
@@ -73,7 +73,7 @@ namespace App1.Droid
       Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartColorFull();
       foreach (KeyValuePair<string, int> item in fdBrand)
       {
-        data.Add(item.Key + " totaal van " + item.Value);
+        data.Add(item.Key + " Total of " + item.Value);
       }
       return data;
     }

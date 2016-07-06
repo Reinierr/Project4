@@ -26,7 +26,7 @@ namespace App1.Droid
         }
         public CategoryAxis CreateCategoryAxisMonths()
         {
-            var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom , IsPanEnabled = false , IsZoomEnabled = false , Title = "Maanden"};
+            var categoryAxis = new CategoryAxis { Position = AxisPosition.Bottom , IsPanEnabled = false , IsZoomEnabled = false , Title = "Months"};
 
             string[] months = { "Jan", "Feb", "Mrt", "Apr", "Mei", "Jun", "Jul", "Aug", "Sep", "Okt", "Nov", "Dec" };
             foreach (string m in months)

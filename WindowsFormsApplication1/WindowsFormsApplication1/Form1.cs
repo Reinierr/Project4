@@ -251,7 +251,7 @@ namespace WindowsFormsApplication1 {
 			if (comboBox1.SelectedItem != null) {
 				int count = comboBox1.SelectedItem.ToString().Count();
 				if (count >= 4) {
-					name = getQualityName(comboBox1.SelectedItem.ToString());
+					name = "Diefstal: " +  getQualityName(comboBox1.SelectedItem.ToString());
 				}
 				else {
 					name = comboBox1.SelectedItem.ToString();
@@ -262,13 +262,13 @@ namespace WindowsFormsApplication1 {
 
 					if (csvFD.getBarchartGroupFD(comboBox1.SelectedItem.ToString()).Count != 0) {
 						if (chart1.Series.IsUniqueName(name)) {
-							Console.WriteLine(name + "'");
+							//Console.WriteLine(name + "'");
 							createSeries(chart1, new string[] { name }, status);
 							addToChart(chart1, name, csvFD.getBarchartGroupFD(comboBox1.SelectedItem.ToString()));
 
 						}
 						else {
-							Console.WriteLine("A");
+							//Console.WriteLine("A");
 							List<Series> saveSeries = new List<Series>();
 							foreach (Series serie in chart1.Series) {
 								//Console.WriteLine(serie.Name + "'" + name);
@@ -298,12 +298,72 @@ namespace WindowsFormsApplication1 {
 			chart1.Titles["Title1"].Text = "Bike thefts in certain neigborhoods per month";
 			changeAxisTitle(chart1, "months", "bikes stolen");
 			bikeTheftsPerNeighborhoodToolStripMenuItem.Enabled = false;
-			
-			bikeTheftsToolStripMenuItem1.Enabled = true;
+            neighborhoodsWithMostBikeContainersToolStripMenuItem.Enabled = true;
+            groupedBarchartOfTheftsAndContainersToolStripMenuItem.Enabled = true;
+            bikeTheftsToolStripMenuItem1.Enabled = true;
 			byColorToolStripMenuItem.Enabled = true;
 			bikeTheftsToolStripMenuItem.Enabled = true;
 			byBrandToolStripMenuItem.Enabled = true;
 
 		}
-	}
+
+        private void neighborhoodsWithMostBikeContainersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            chart1.Series.Clear();
+            status = SeriesChartType.Column;
+            createSeries(chart1, new string[] { "Centrum", "Delfshaven" , "Feijenoord" ,"Kralingen/Crooswijk", "Noord" }, SeriesChartType.Column);
+            addToChart(chart1, "Centrum", csvFT.getBarchartGroupFT("centrum"));
+            addToChart(chart1, "Delfshaven", csvFT.getBarchartGroupFT("delfshaven"));
+            addToChart(chart1, "Feijenoord", csvFT.getBarchartGroupFT("feijenoord"));
+            addToChart(chart1, "Kralingen/Crooswijk", csvFT.getBarchartGroupFT("kralingen/crooswijk"));
+            addToChart(chart1, "Noord", csvFT.getBarchartGroupFT("noord"));
+
+            changeAxisTitle(chart1, "months", "Bike container erected");
+            chart1.Titles["Title1"].Text = "Bike containers erected per month per borough";
+
+            button2.Enabled = false;
+            groupedBarchartOfTheftsAndContainersToolStripMenuItem.Enabled = true;
+            neighborhoodsWithMostBikeContainersToolStripMenuItem.Enabled = false;
+            bikeTheftsToolStripMenuItem1.Enabled = true;
+            byColorToolStripMenuItem.Enabled = true;
+            bikeTheftsToolStripMenuItem.Enabled = true;
+            byBrandToolStripMenuItem.Enabled = true;
+        }
+
+        private void groupedBarchartOfTheftsAndContainersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            chart1.Series.Clear();
+            status = SeriesChartType.Column;
+
+            createSeries(chart1, new string[] { "Container: Centrum", "Container: Delfshaven", "Container: Feijenoord", "Container: Kralingen/Crooswijk", "Container: Noord" }, SeriesChartType.Column);
+            addToChart(chart1, "Container: Centrum", csvFT.getBarchartGroupFT("centrum"));
+            addToChart(chart1, "Container: Delfshaven", csvFT.getBarchartGroupFT("delfshaven"));
+            addToChart(chart1, "Container: Feijenoord", csvFT.getBarchartGroupFT("feijenoord"));
+            addToChart(chart1, "Container: Kralingen/Crooswijk", csvFT.getBarchartGroupFT("kralingen/crooswijk"));
+            addToChart(chart1, "Container: Noord", csvFT.getBarchartGroupFT("noord"));
+            
+
+            List<string> buurten = csvFD.getBuurten();
+            foreach (string buurt in buurten)
+            {
+                comboBox1.Items.Add(buurt);
+            }
+
+            changeAxisTitle(chart1, "months", "bikes stolen / containers erected");
+            chart1.Titles["Title1"].Text = "Amount of thefts and containers in each neighborhood";
+
+
+            bikeTheftsToolStripMenuItem.Enabled = true;
+            byColorToolStripMenuItem.Enabled = true;
+            byBrandToolStripMenuItem.Enabled = true;
+            button2.Enabled = true;
+            bikeTheftsToolStripMenuItem1.Enabled = true;
+            bikeTheftsPerNeighborhoodToolStripMenuItem.Enabled = true;
+            neighborhoodsWithMostBikeContainersToolStripMenuItem.Enabled = true;
+            groupedBarchartOfTheftsAndContainersToolStripMenuItem.Enabled = false;
+
+
+        }
+    }
 }
