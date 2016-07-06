@@ -373,38 +373,35 @@ namespace App1.Droid
 			// aapt resource value: 0x7f070016
 			public const int barchart = 2131165206;
 			
+			// aapt resource value: 0x7f070020
+			public const int button1 = 2131165216;
+			
 			// aapt resource value: 0x7f070021
-			public const int button1 = 2131165217;
+			public const int button2 = 2131165217;
 			
 			// aapt resource value: 0x7f070022
-			public const int button2 = 2131165218;
+			public const int button3 = 2131165218;
 			
-			// aapt resource value: 0x7f070023
-			public const int button3 = 2131165219;
-			
-			// aapt resource value: 0x7f07001c
-			public const int cancelbutton = 2131165212;
+			// aapt resource value: 0x7f07001b
+			public const int cancelbutton = 2131165211;
 			
 			// aapt resource value: 0x7f07000b
 			public const int dark = 2131165195;
 			
-			// aapt resource value: 0x7f07001e
-			public const int datePicker1 = 2131165214;
+			// aapt resource value: 0x7f07001d
+			public const int datePicker1 = 2131165213;
+			
+			// aapt resource value: 0x7f070024
+			public const int editText1 = 2131165220;
 			
 			// aapt resource value: 0x7f070025
-			public const int editText1 = 2131165221;
-			
-			// aapt resource value: 0x7f070026
-			public const int editText2 = 2131165222;
+			public const int editText2 = 2131165221;
 			
 			// aapt resource value: 0x7f070012
 			public const int emptylayout = 2131165202;
 			
-			// aapt resource value: 0x7f07001d
-			public const int frameLayout1 = 2131165213;
-			
-			// aapt resource value: 0x7f07001b
-			public const int gmaps = 2131165211;
+			// aapt resource value: 0x7f07001c
+			public const int frameLayout1 = 2131165212;
 			
 			// aapt resource value: 0x7f070000
 			public const int hybrid = 2131165184;
@@ -427,11 +424,11 @@ namespace App1.Droid
 			// aapt resource value: 0x7f07000f
 			public const int linearLayout2 = 2131165199;
 			
-			// aapt resource value: 0x7f07002a
-			public const int linearLayout3 = 2131165226;
+			// aapt resource value: 0x7f070029
+			public const int linearLayout3 = 2131165225;
 			
-			// aapt resource value: 0x7f07002b
-			public const int linearLayout4 = 2131165227;
+			// aapt resource value: 0x7f07002a
+			public const int linearLayout4 = 2131165226;
 			
 			// aapt resource value: 0x7f070013
 			public const int map = 2131165203;
@@ -463,11 +460,11 @@ namespace App1.Droid
 			// aapt resource value: 0x7f070008
 			public const int standard = 2131165192;
 			
-			// aapt resource value: 0x7f070020
-			public const int surfaceView1 = 2131165216;
+			// aapt resource value: 0x7f07001f
+			public const int surfaceView1 = 2131165215;
 			
-			// aapt resource value: 0x7f070029
-			public const int tabHost1 = 2131165225;
+			// aapt resource value: 0x7f070028
+			public const int tabHost1 = 2131165224;
 			
 			// aapt resource value: 0x7f070004
 			public const int terrain = 2131165188;
@@ -475,23 +472,23 @@ namespace App1.Droid
 			// aapt resource value: 0x7f070010
 			public const int textView1 = 2131165200;
 			
-			// aapt resource value: 0x7f070024
-			public const int textView2 = 2131165220;
+			// aapt resource value: 0x7f070023
+			public const int textView2 = 2131165219;
 			
 			// aapt resource value: 0x7f07001a
 			public const int textfile = 2131165210;
 			
-			// aapt resource value: 0x7f07001f
-			public const int timePicker1 = 2131165215;
+			// aapt resource value: 0x7f07001e
+			public const int timePicker1 = 2131165214;
 			
 			// aapt resource value: 0x7f070009
 			public const int wide = 2131165193;
 			
-			// aapt resource value: 0x7f070027
-			public const int writeNote = 2131165223;
+			// aapt resource value: 0x7f070026
+			public const int writeNote = 2131165222;
 			
-			// aapt resource value: 0x7f070028
-			public const int writeResponse = 2131165224;
+			// aapt resource value: 0x7f070027
+			public const int writeResponse = 2131165223;
 			
 			static Id()
 			{

@@ -48,7 +48,7 @@ namespace App1.Droid
 
         public PieSeries CreatePieSeriesBasic()
         {
-            return new PieSeries { StrokeThickness = 2.0, InsideLabelPosition = 0.7, AngleSpan = 360, StartAngle = -90, InsideLabelFormat = "{1}: {2:0} %", OutsideLabelFormat = "", FontSize = 20 }; ;
+            return new PieSeries { TickDistance = 9999, StrokeThickness = 2.0, InsideLabelPosition = 0.7, AngleSpan = 360, StartAngle = -90, InsideLabelFormat = "{1}: {2:0} %", OutsideLabelFormat = "", FontSize = 20 }; ;
         }
     }
 }

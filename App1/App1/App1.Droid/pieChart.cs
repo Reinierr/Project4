@@ -33,7 +33,6 @@ namespace App1.Droid
       {
         SetContentView(Resource.Layout.barChart);
         PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
-        view.SetBackgroundColor(Color.Black);
         CreatePieChart barchart = new CreatePieChart();
         view.Model = barchart.CreatePlotModel();
       };
@@ -46,7 +45,6 @@ namespace App1.Droid
       {
         SetContentView(Resource.Layout.barChart);
         PlotView view = FindViewById<PlotView>(Resource.Id.plot_view_bar);
-        view.SetBackgroundColor(Color.Black);
         CreatePieChart2 pieChart = new CreatePieChart2();
         view.Model = pieChart.CreatePlotModel();
       };
@@ -69,7 +67,7 @@ namespace App1.Droid
   {
     public PlotModel CreatePlotModel()
     {
-      var modelP1 = new PlotModel { Title = "Most stolen bike brands top 5", TitleColor = OxyColors.White };
+      var modelP1 = new PlotModel { Title = "Most stolen bike brands top 5", TitleColor = OxyColors.Black };
       IFactory factory = new ConcreteFactory();
       var seriesP1 = factory.CreatePieSeriesBasic();
 
@@ -90,7 +88,7 @@ namespace App1.Droid
   {
     public PlotModel CreatePlotModel()
     {
-      var modelP1 = new PlotModel { Title = "Most stolen bike Color top 5", TitleColor = OxyColors.White };
+      var modelP1 = new PlotModel { Title = "Most stolen bike Color top 5", TitleColor = OxyColors.Black };
       IFactory factory = new ConcreteFactory();
       var seriesP1 = factory.CreatePieSeriesBasic();
       Dictionary<string, int> fdBrand = preLoad.csvFD.getPiechartColor();

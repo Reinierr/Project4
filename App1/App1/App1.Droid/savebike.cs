@@ -108,7 +108,6 @@ namespace App1.Droid
         DateTime dateTime1 = new DateTime();
         DateTime dateTime2 = new DateTime();
 
-
         var button1 = FindViewById<Button>(Resource.Id.button1);
         var button2 = FindViewById<Button>(Resource.Id.button2);
         var button3 = FindViewById<Button>(Resource.Id.button3);
@@ -201,6 +200,16 @@ namespace App1.Droid
           writeResponse.Text = "Your bike location has been saved in your downloads folder.";
           writeNote.Visibility = ViewStates.Invisible;
         };
+      };
+      ActionBar.AddTab(tab);
+
+      tab = ActionBar.NewTab();
+      tab.SetText("Maps");
+      tab.SetIcon(Resource.Drawable.biconfix);
+      tab.TabSelected += (sender, args) =>
+      {
+        var intent = new Intent(this, typeof(gmaps));
+        StartActivity(intent);
       };
       ActionBar.AddTab(tab);
     }
