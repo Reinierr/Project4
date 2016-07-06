@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" android:versionCode="1" android:versionName="1.0" package="App1.Droid">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" android:installLocation="auto" package="Ap.Ap" android:versionCode="1" android:versionName="1.0">
   <!--	<uses-sdk android:minSdkVersion="15" /> -->
   <uses-permission android:name="android.permission.READ_CALENDAR" />
   <uses-permission android:name="android.permission.WRITE_CALENDAR" />
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-  <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-feature android:glEsVersion="0x00020000" android:required="true" />
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCES_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
   <application android:label="App1.Droid" android:name="md50170a25da682dd459b9251c65ebe3a7a.preLoad" android:allowBackup="true" android:icon="@drawable/barcharticon" android:debuggable="true">
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="@string/google_maps_key" />
+    <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
     <activity android:icon="@drawable/barcharticon" android:label="barchart" android:name="md50170a25da682dd459b9251c65ebe3a7a.barchart" />
+    <activity android:label="gmaps" android:name="md50170a25da682dd459b9251c65ebe3a7a.gmaps" />
     <activity android:icon="@drawable/icon" android:label="linechart" android:name="md50170a25da682dd459b9251c65ebe3a7a.linechart" />
     <activity android:icon="@drawable/icon" android:label="Bike Crime 'n Storage" android:name="md50170a25da682dd459b9251c65ebe3a7a.MainActivity">
       <intent-filter>
@@ -19,12 +28,12 @@
     <activity android:icon="@drawable/icon" android:label="piechart" android:name="md50170a25da682dd459b9251c65ebe3a7a.piechart" />
     <activity android:label="pielist" android:name="md50170a25da682dd459b9251c65ebe3a7a.pielist" />
     <activity android:icon="@drawable/icon" android:label="savebike" android:name="md50170a25da682dd459b9251c65ebe3a7a.savebike" />
-    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="App1.Droid.mono.MonoRuntimeProvider.__mono_init__" />
+    <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="Ap.Ap.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">
       <intent-filter>
         <action android:name="mono.android.intent.action.SEPPUKU" />
-        <category android:name="mono.android.intent.category.SEPPUKU.App1.Droid" />
+        <category android:name="mono.android.intent.category.SEPPUKU.Ap.Ap" />
       </intent-filter>
     </receiver>
   </application>

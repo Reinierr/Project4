@@ -38,6 +38,12 @@ namespace App1.Droid
       };
 
       // buttons for the charts (visitor  and list)
+      Button gmaps = FindViewById<Button>(Resource.Id.gmaps);
+      gmaps.Click += (sender, e) =>
+      {
+        var intent = new Intent(this, typeof(gmaps));
+        StartActivity(intent);
+      };
       ImageButton barscreen = FindViewById<ImageButton>(Resource.Id.barchart);
       barscreen.Click += (sender, e) =>
       {
