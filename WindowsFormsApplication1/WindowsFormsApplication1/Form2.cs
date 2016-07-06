@@ -11,11 +11,8 @@ using System.Windows.Forms;
 namespace WindowsFormsApplication1 {
 	public partial class Form2 : Form {
 		public Form2() {
-			InitializeComponent();
-		}
-
-
-		
+			InitializeComponent(); //Intializes form according to Windows Forms Designer
+		}	
 
 		private void Form2_Load(object sender, EventArgs e) {
 
